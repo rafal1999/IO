@@ -1,0 +1,407 @@
+/*Ładowanie fontów*/
+@font-face{
+    font-family: "Open Sans";
+    font-weight: 400;
+    src: url("OpenSans-Regular.ttf") format("truetype");
+}
+@font-face{
+    font-family: "Open Sans";
+    font-weight: 600;
+    src: url("OpenSans-SemiBold.ttf") format("truetype");
+}
+
+/*Ogólne style dla wszystkich stron*/
+
+html {
+    font-family: "Open Sans", sans-serif;
+    font-size:15px;
+    color:black;
+    background-color:rgb(230,230,230);
+}
+
+p {
+    margin:0.5em 0;
+}
+
+section{
+    margin: 20px 0;
+}
+
+a {
+    color:inherit;
+}
+
+h2 {
+    font-size: 30px;
+    margin:0;
+    padding:0.3em 0;
+}
+
+h3 {
+    font-size: 20px;
+    margin:0;
+    padding:0.3em 0;
+}
+
+/*Style nagłówka strony*/
+
+header.top-header{
+    border-bottom:3px solid rgb(0, 150, 0);
+    display: flex;
+    align-items:center;
+    background-color:white;
+}
+
+h1.business-name{
+    font-weight: 600;
+    font-size: 40px;
+    margin:0.5em;
+}
+
+header.top-header p.motto{
+    flex:1;
+    font-size: 25px;
+    margin:0;
+    padding: 0.5em;
+}
+
+header.top-header .header-buttons{
+    display:flex;
+}
+
+header.top-header .header-buttons > *{
+    display:block;
+    margin-right:10px;
+}
+
+/*Style formularzy i kontrolek*/
+
+/*form.full-width - formularz zajmujący całą dostępną szerokość*/
+
+form.full-width input[type="text"], form.full-width input[type="password"]{
+    box-sizing: border-box;
+    width:100%;
+}
+
+/*Klasa button-like sprawia, że coś wygląda jak przycisk*/
+button, .button-like{
+    padding:0.3em 0.5em;
+    display:inline-block;
+    background-color: rgb(0, 150, 0);
+    color:white;
+    border-style:none;
+    font:inherit;
+    font-size:20px;
+    font-weight:bold;
+    text-decoration:none;
+    cursor:pointer;
+    border-radius:3px;
+    line-height:1.15;
+}
+
+button:hover, .button-like:hover{
+    background-color: rgb(0, 100, 0);
+}
+
+input[type="text"], input[type="password"]{
+    padding:0.3em 0.5em;
+    font:inherit;
+    font-size:20px;
+}
+
+input[type="text"]#search{
+    width:calc(100% - 150px);
+    max-width:1100px;
+}
+
+/* Style pomocniczych klas do formatowania formularzy */
+
+.text-input-group label{
+    display:block;
+    margin: 0.5em 0;
+    font-weight:bold;
+}
+
+.checkbox-group {
+    margin: 0.5em 0;
+}
+
+.radio-group > label, .checkbox-group > label{
+    display:block;
+    line-height:2;
+    font-weight:bold;
+}
+
+.columns-inside{
+    display:flex;
+}
+
+.columns-inside > :not(:first-child){
+    margin-left:10px;
+}
+
+.submit-group{
+    margin-top:10px;
+    text-align:right;
+}
+
+.columns-inside .column-first-name{ flex:auto;}
+.columns-inside .column-last-name{ flex:auto;}
+.columns-inside .column-street{ flex:2;}
+.columns-inside .column-house-number{ flex:1;}
+.columns-inside .column-flat-number{ flex:1;}
+.columns-inside .column-postal-code{ flex: 0 1 9em;}
+.columns-inside .column-town{ flex:auto;}
+.column-phone-number{ max-width:15em;}
+
+.line-names{
+    display:flex;
+}
+.line-names > *{
+    flex:auto;
+}
+
+.line-street-number{
+    display:flex;
+}
+.line-street-number > :first-child{
+    flex:2;
+}
+.line-street-number > :nth-child(2){
+    flex:2;
+}
+
+
+/*Style związane z układem strony*/
+
+/*Styl dla głównego obiektu w przypadku strony składającej się z jednej kolumny*/
+.single-column-layout{
+    margin: 30px auto;
+    padding:30px;
+    background-color:white;
+    border-radius:5px;
+}
+
+/* Szczegóły dotyczące szerokości kolumn na konkretnych stronach */
+
+.main-page-column{
+    max-width:600px;
+}
+
+.account-column{
+    max-width:600px;
+}
+
+.login-column{
+    max-width:400px;
+}
+
+.cart-column{
+    max-width:1000px;
+}
+
+/* Styl dla głównego obiektu w przypadku strony składającej się z dwóch kolumn:
+menu z lewej i części głównej */
+.menu-content-container{
+    display:flex;
+    align-items:start;
+    padding:5px;
+    max-width:1400px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.menu-content-container > nav{
+    background-color:white;
+    margin:5px;
+    flex:none;
+    width:300px;
+}
+
+div.main-column{
+    flex:auto;
+    display:flex;
+    flex-direction:column;
+}
+
+div.main-column > section{
+    margin:5px;
+    background-color:white;
+    padding:15px;
+}
+
+/* Style listy sklepów na stronie głównej */
+
+h2.shop-list-header{
+    text-align:center;
+}
+
+ul.shop-list{
+    list-style:none;
+    padding:0;
+    font-size:30px;
+}
+
+ul.shop-list li{
+    border-bottom: 2px solid rgb(0, 150, 0);
+}
+ul.shop-list li:first-child{
+    border-top: 2px solid rgb(0, 150, 0);
+}
+ul.shop-list li:hover{
+    color: rgb(0, 150, 0);
+    background-color: rgb(240, 240, 240);
+}
+ul.shop-list li a, ul.category-list li a{
+    display: block;
+    padding: 0.5em;
+    color:inherit;
+    text-decoration:none;
+}
+
+
+
+
+/* Style listy kategorii produktów */
+
+.category-list-header{
+    margin:0;
+    padding:0.5em;
+    font-size:20px;
+    text-align:center;
+    border-bottom:2px solid rgb(0, 150, 0);
+}
+
+ul.category-list{
+    font-size:20px;
+    list-style:none;
+    padding:0;
+}
+
+ul.category-list li a:hover{
+    color: rgb(0, 150, 0);
+    background-color: rgb(240, 240, 240);
+}
+
+/* Style produktu pojawiającego się w wynikach wyszukiwania i na liście ofert (klasa product)
+   oraz szczegółów produktu (klasa product-details) */
+
+article.product{
+    padding:10px;
+    border-top: 2px solid rgb(230,230,230);
+    display:flex;
+}
+
+article.product-details{
+    display:flex;
+    flex-wrap: wrap;
+}
+
+article.product > div,
+article.product-details > div{
+    margin:0 5px;
+}
+
+article.product .product-image,
+article.product-details .product-image{
+    flex:none;
+}
+
+article.product .product-info{
+    flex:auto;
+}
+
+article.product-details .product-info{
+    flex: 1 300px;
+}
+
+article.product .product-buttons{
+    flex:none;
+    display:flex;
+    align-items:center;
+}
+
+article.product .product-image img{
+    width:200px;
+    height:200px;
+}
+
+article.product-details .product-image img{
+    width:400px;
+    height:400px;
+}
+
+.product-old-price{
+    font-size:20px;
+    text-decoration:line-through;
+    color: rgb(128, 128, 128)
+}
+
+.product-price{
+    font-size:40px;
+}
+
+article.product a{
+    text-decoration:none;
+}
+article.product a:hover{
+    text-decoration:underline;
+}
+
+table.details-table{
+    margin:2em 0;
+}
+table.details-table td{
+    padding: 0.5em;
+    vertical-align:top;
+}
+
+table.details-table td:first-child{
+    width:30%;
+}
+
+
+
+/*Style tabeli z zawartością koszyka*/
+
+table.cart-table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+table.cart-table td{
+    border-top:2pt solid rgb(230,230,230);
+    padding:5px;
+}
+
+table.cart-table td:nth-child(1){
+    width:100px;
+    height:100px;
+}
+
+table.cart-table td:nth-child(1) img{
+    width:100px;
+    height:100px;
+}
+
+table.cart-table td:nth-child(3) input{
+    font-size:inherit;
+    width:2em;
+}
+
+table.cart-table td:nth-child(4){
+    font-size:30px;
+    text-align:right;
+}
+
+.cart-summary{
+    border-top:2pt solid rgb(0, 150, 0);
+    text-align:right;
+    padding:20px 5px;
+}
+
+.cart-summary .cart-total-price{
+    
+    font-size:30px;
+    
+}
