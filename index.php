@@ -1,14 +1,19 @@
 <?php 
+
 define("MAIN", true);
 
-require_once("class\db.php");
+require_once("config/const.php");
 
-$db = new Database();
+require_once(CLASS_PATH . "Database.php");
 
-$db->connect();
-$array = $db->querySelect("SELECT 1");
+//todo interpreter
 
-var_dump($array);
+require_once(CONTROLLER_PATH . "SampleController.php");
 
+$inputArray = [
+    'first' => 2
+];
+
+$sample = new Controller\SampleController($inputArray);
 
 ?>
