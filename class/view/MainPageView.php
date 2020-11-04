@@ -10,14 +10,17 @@ class MainPageView extends View
     function __construct(){
         parent::__construct();
         $this->templateName = 'MainSite.html';
-        $this->templateArray['title'] = BUSINESS_NAME;
-        $this->templateArray['motto'] = 'Najlepsze produkty najbliżej Ciebie';
+        $this->setProperty('title', BUSINESS_NAME);
+        $this->setProperty('motto', 'Najlepsze produkty najbliżej Ciebie');
+        $this->setProperty('singleColumnClass', 'main-page-column');
+        //$this->templateArray['title'] = BUSINESS_NAME;
+        //$this->templateArray['motto'] = 'Najlepsze produkty najbliżej Ciebie';
 
-        $this->templateArray['singleColumnClass'] = 'main-page-column';
-        $this->templateArray['shops'] = [];
+        //$this->templateArray['singleColumnClass'] = 'main-page-column';
+        //$this->templateArray['shops'] = [];
     }
     public function addShop(array $shop){
-        $this->templateArray['shops'][] = $shop;
+        $this->addArrayProperty('shops', $shop);
     }
     
 }
