@@ -11,7 +11,7 @@ require_once(CLASS_PATH . "Database.php");
 require_once(CONTROLLER_PATH . "SampleController.php");
 
 $inputArray = [
-    'first' => 2
+    'first' => 1
 ];
 
 $sample = new Controller\SampleController($inputArray);

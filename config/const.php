@@ -12,6 +12,10 @@ define("VIEW_CLASS_PATH", VIEW_PATH."View.php");
 define("MODEL_CLASS_PATH", MODEL_PATH."Model.php");
 
 define("HTML_PATH", "html/");
+define("TEMPLATES_PATH", "templates/");
+define("CACHE_PATH", "cache/");
+define("CSS_PATH", "css/");
 
+define("BUSINESS_NAME", "JanuszPol")
 
 ?>

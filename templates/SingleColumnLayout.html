@@ -1,0 +1,8 @@
+{% extends templates/BasicLayout.html %}
+{% block content %}
+<main>
+    <article class="single-column-layout {{{ $singleColumnClass }}}">
+        {% yield main %}
+    </article>
+</main>
+{% endblock %}

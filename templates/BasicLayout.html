@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <title>{{ $title }}</title>
+    <link href="{{ CSS_PATH }}normalize.css" rel="stylesheet">
+    <link href="{{ CSS_PATH }}main.css" rel="stylesheet">
+</head>
+<body>
+    <header class="top-header">
+        <h1 class="business-name">{{{ $businessName }}}</h1>
+        <p class="motto">{{{ $motto }}}</p>
+        <div class="header-buttons">
+            {% foreach ($headerButtons as $button): %}
+                <a href="{{{ $button['url'] }}}" class="button-like">{{{ $button['text'] }}}</a>
+            {% endforeach; %}
+        </div>
+    </header>
+    {% yield content %}
+</body>
+</html>

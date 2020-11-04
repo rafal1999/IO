@@ -1,0 +1,11 @@
+{% extends templates/SingleColumnLayout.html %}
+{% block main %}
+<h2 class="shop-list-header">Wybierz sklep</h2>
+<ul class="shop-list">
+    {% foreach ($shops as $shop): %}
+    <li>
+        <a href="{{{ $shop['url'] }}}">{{{ $shop['name'] }}}</a>
+    </li>
+    {% endforeach; %}
+</ul>
+{% endblock %}
