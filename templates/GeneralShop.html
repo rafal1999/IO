@@ -1,0 +1,28 @@
+{% extends templates/TwoColumnLayout.html %}
+{% block leftMenu %}
+<h2 class="category-list-header">Kategorie</h2>
+<ul class="category-list">
+{% foreach($categories as $category): %}
+    <li>
+        <a href="kontroler-sklepu?category={{{ urlencode($category['_idCategory']) }}}">{{{ $category['_categoryName'] }}}</a>
+    </li>
+{% endforeach; %}
+</ul>
+{% endblock %}
+{% block mainColumn %}
+<section>
+    <form action="kontroler-sklepu" method="get">
+        <div class="text-input-group">
+            <label for="search">Znajdź produkt</label>
+            <input name="search" id="search" type="text">
+            <button type="submit">Szukaj</button>
+        </div>
+        
+    </form>
+</section>
+<section>
+    <main>
+        {% yield shopContent %}
+    </main>
+</section>
+{% endblock %}

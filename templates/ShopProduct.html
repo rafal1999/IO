@@ -1,0 +1,22 @@
+{% extends templates/GeneralShop.html %}
+{% block shopContent %}
+<h2>{{{ $product['_name'] }}}</h2>
+<article class="product-details">
+    
+    <div class="product-image">
+        <img src="images/{{{ $product['_picture'] }}}" alt="Ilustracja produktu">
+    </div>
+    <div class="product-info">
+        <p class="product-description">{{{ $product['_description'] }}}</p>
+        {% if($product['_discount'] > 0): %}
+            <div class="product-old-price">{{{ $product['_price'] }}} zł</div>
+            <div class="product-price">{{{ $product['_price']-$product['_discount'] }}} zł</div>
+        {% else: %}
+            <div class="product-price">{{{ $product['_price'] }}} zł</div>
+        {% endif; %}
+        <div class="submit-group">
+            <button type="button" value="{{{ $product['_idProduct'] }}}" class="add-to-cart">Do koszyka</button>
+        </div>
+    </div>
+</article>
+{% endblock %}

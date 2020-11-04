@@ -15,6 +15,7 @@ define("HTML_PATH", "html/");
 define("TEMPLATES_PATH", "templates/");
 define("CACHE_PATH", "cache/");
 define("CSS_PATH", "css/");
+define("IMAGES_PATH", "images/");
 
 define("BUSINESS_NAME", "JanuszPol")
 

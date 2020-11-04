@@ -13,6 +13,7 @@ abstract class View
     protected $templateArray = [];
     function __construct(){
         $this->setProperty('businessName', BUSINESS_NAME);
+        $this->setProperty('title', BUSINESS_NAME);
         $this->addArrayProperty('headerButtons', ['text' => 'przycisk', 'url' => '#']);
     }
 

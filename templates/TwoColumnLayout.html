@@ -1,0 +1,11 @@
+{% extends templates/BasicLayout.html %}
+{% block content %}
+<div class="menu-content-container">
+    <nav>
+        {% yield leftMenu %}
+    </nav>
+    <div class="main-column">
+        {% yield mainColumn %}
+    </div>
+</div>
+{% endblock %}
