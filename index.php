@@ -9,6 +9,8 @@ require_once(CLASS_PATH . "Database.php");
 $db = new Util\Database();
 $db->connect();
 
+session_start();
+
 //interpreter
 
 $controllerName = isset($_REQUEST['controller']) ? $_REQUEST['controller'] : null;

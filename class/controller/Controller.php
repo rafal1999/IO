@@ -52,7 +52,7 @@ abstract class Controller
         return $object;
     }
 
-    protected function changeController($controller, array $data){
+    protected function changeController($controller, array $data = []){
         
         $datas = "";
 
@@ -60,7 +60,7 @@ abstract class Controller
             $datas .= "&" . $key . "=". htmlentities($row, ENT_QUOTES, 'UTF-8');
         }
 
-        header('index.php?controller='.$controller.$datas);
+        header('Location: index.php?controller='.$controller.$datas);
         exit();
     } 
 
