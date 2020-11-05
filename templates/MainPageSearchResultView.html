@@ -12,7 +12,7 @@
         <img src="{{{ PRODUCT_PICTURE_PATH .  $product['_picture'] }}}" alt="Ilustracja produktu">
     </div>
     <div class="product-info">
-        <h3><a href="?controller=productController&and;idProduct={{{ urlencode($product['_idProduct']) }}}">{{{ $product['_name'] }}}</a></h3>
+        <h3><a href="?controller=productController&amp;idProduct={{{ urlencode($product['_idProduct']) }}}">{{{ $product['_name'] }}}</a></h3>
         <p class="product-description">{{{ $product['_description'] }}}</p>
         {% if($product['_discount'] > 0): %}
             <div class="product-old-price">{{{ $product['_price'] }}} zł</div>

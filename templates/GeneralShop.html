@@ -4,7 +4,7 @@
 <ul class="category-list">
 {% foreach($categories as $category): %}
     <li>
-        <a href="?controller=SearchResultController&and;category={{{ urlencode($category['_idCategory']) }}}">{{{ $category['_categoryName'] }}}</a>
+        <a href="?controller=SearchResultController&amp;category={{{ urlencode($category['_idCategory']) }}}">{{{ $category['_categoryName'] }}}</a>
     </li>
 {% endforeach; %}
 </ul>

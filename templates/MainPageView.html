@@ -4,7 +4,7 @@
 <ul class="shop-list">
     {% foreach ($shops as $shop): %}
     <li>
-        <a href="?controller=MainPageController&and;_idShop={{{ $shop['_idShop'] }}}">{{{ $shop['_name'] }}}</a>
+        <a href="?controller=MainPageController&amp;_idShop={{{ $shop['_idShop'] }}}">{{{ $shop['_name'] }}}</a>
     </li>
     {% endforeach; %}
 </ul>
