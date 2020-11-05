@@ -5,20 +5,23 @@ namespace Controller;
 
 require_once(CONTROLLER_PATH."MainPageController.php");
 
-class LoginController extends MainPageController
+class CartController extends MainPageController
 {   
 
     function __construct(){
         parent::__construct();
         try{
-            $this->viewMainPage = $this->loadView("MainPageLoginView");
+            $this->viewMainPage = $this->loadView("MainPageCartView");
         }catch(\Exception $e){
             echo $e->getMessage() . "\n";
         }
     }
 
+
     protected function showPage(){   
-        //$this->viewMainPage->setIncorrect();   
+            
+        $this->viewMainPage->addProduct([]);
+        $this->viewMainPage->setTotalPrice(0);
         $this->viewMainPage->output();
     }
 

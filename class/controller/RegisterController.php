@@ -5,20 +5,19 @@ namespace Controller;
 
 require_once(CONTROLLER_PATH."MainPageController.php");
 
-class LoginController extends MainPageController
+class RegisterController extends MainPageController
 {   
 
     function __construct(){
         parent::__construct();
         try{
-            $this->viewMainPage = $this->loadView("MainPageLoginView");
+            $this->viewMainPage = $this->loadView("MainPageRegisterView");
         }catch(\Exception $e){
             echo $e->getMessage() . "\n";
         }
     }
 
-    protected function showPage(){   
-        //$this->viewMainPage->setIncorrect();   
+    protected function showPage(){    
         $this->viewMainPage->output();
     }
 
