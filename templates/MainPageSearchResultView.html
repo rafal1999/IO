@@ -12,7 +12,7 @@
         <img src="{{{ PRODUCT_PICTURE_PATH .  $product['_picture'] }}}" alt="Ilustracja produktu">
     </div>
     <div class="product-info">
-        <h3><a href="productControler?idProduct={{{ urlencode($product['_idProduct']) }}}">{{{ $product['_name'] }}}</a></h3>
+        <h3><a href="?controller=productController&and;idProduct={{{ urlencode($product['_idProduct']) }}}">{{{ $product['_name'] }}}</a></h3>
         <p class="product-description">{{{ $product['_description'] }}}</p>
         {% if($product['_discount'] > 0): %}
             <div class="product-old-price">{{{ $product['_price'] }}} zł</div>
@@ -22,7 +22,7 @@
         {% endif; %}
     </div>
     <div class="product-buttons">
-        <button type="button" value="{{{ $product['_idProduct'] }}}"  class="add-to-cart">Do koszyka</button>
+        <button type="button" value="{{{ $product['_idProduct'] }}}"  class="button-add-cart" data-product-id="{{{ $product['_idProduct'] }}}">Do koszyka</button>
     </div>
 </article>
 {% endforeach; %}

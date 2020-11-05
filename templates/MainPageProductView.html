@@ -15,7 +15,7 @@
             <div class="product-price">{{{ $product['_price'] }}} zł</div>
         {% endif; %}
         <div class="submit-group">
-            <button type="button" value="{{{ $product['_idProduct'] }}}" class="add-to-cart">Do koszyka</button>
+            <button type="button" value="{{{ $product['_idProduct'] }}}" class="button-add-cart" data-product-id="{{{ $product['_idProduct'] }}}">Do koszyka</button>
         </div>
     </div>
 </article>

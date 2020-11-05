@@ -6,7 +6,8 @@
     <tr>
         <td><img src="{{{ PRODUCT_PICTURE_PATH .  $product['_picture'] }}}"></td>
         <td>{{{ $product['_name'] }}}</td>
-        <td><input type="text" value="{{{ $product['_count'] }}}"> szt</td>
+        <td><input type="text" value="{{{ $product['_count'] }}}" class="input-number-in-cart" data-product-id="{{{ $product['_idProduct'] }}}"> szt</td>
+        <td><button class="button-delete button-delete-cart" title="Usuń" data-product-id="{{{ $product['_idProduct'] }}}"></button></td>
         <td>{{{ $product['_totalPrice'] }}} zł</td>
     </tr>
     {% endforeach; %}
@@ -15,7 +16,7 @@
     Razem: <span class="cart-total-price">{{{ $totalPrice }}} zł</span>
 </div>
 <div class="submit-group">
-    <a href="MainPageController" class="button-like">Kontynuuj zakupy</a>
-    <a href="CheckoutController" class="button-like">Do kasy</a>
+    <a href="?controller=MainPageController" class="button-like">Kontynuuj zakupy</a>
+    <a href="?controller=CheckoutController" class="button-like">Do kasy</a>
 </div>
 {% endblock %}

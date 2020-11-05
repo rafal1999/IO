@@ -1,7 +1,7 @@
 {% extends templates/SingleColumnLayout.html %}
 {% block main %}
 <h2>Zakładanie konta</h2>
-<form class="full-width" action="create-account.html" method="post">
+<form class="full-width" action="?controller=RegisterController" method="post">
     <div class="text-input-group">
         <label for="email">E-mail*</label>
         <input type="text" id="email" name="email">

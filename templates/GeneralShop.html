@@ -4,14 +4,14 @@
 <ul class="category-list">
 {% foreach($categories as $category): %}
     <li>
-        <a href="kontroler-sklepu?category={{{ urlencode($category['_idCategory']) }}}">{{{ $category['_categoryName'] }}}</a>
+        <a href="?controller=SearchResultController&and;category={{{ urlencode($category['_idCategory']) }}}">{{{ $category['_categoryName'] }}}</a>
     </li>
 {% endforeach; %}
 </ul>
 {% endblock %}
 {% block mainColumn %}
 <section>
-    <form action="kontroler-sklepu" method="get">
+    <form action="?controller=SearchResultController" method="get">
         <div class="text-input-group">
             <label for="search">Znajdź produkt</label>
             <input name="search" id="search" type="text">
