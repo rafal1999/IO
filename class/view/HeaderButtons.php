@@ -6,7 +6,7 @@ namespace View;
 class HeaderButtons{
     private $buttons = [
         'cart' => ['tag'=>'a', 'text'=>'Pokaż koszyk', 'url'=>'?controller=CartController', 'visible'=>false],
-        'changeShop' => ['tag'=>'a', 'text'=>'Zmień sklep', 'url'=>'?controller=MainPageController', 'visible'=>false],
+        'changeShop' => ['tag'=>'a', 'text'=>'Zmień sklep', 'url'=>'?controller=MainPageController&and;idShop=-1', 'visible'=>false],
         'register' => ['tag'=>'a', 'text'=>'Załóż konto', 'url'=>'?controller=RegisterController', 'visible'=>false],
         'manageAccount' => ['tag'=>'a', 'text'=>'Ustawienia konta', 'url'=>'?controller=registerController&and;action=manage', 'visible'=>false],
         'login' => ['tag'=>'a', 'text'=>'Zaloguj się', 'url'=>'?controller=LoginController', 'visible'=>false],
