@@ -11,7 +11,8 @@
 {% endblock %}
 {% block mainColumn %}
 <section>
-    <form action="?controller=SearchResultController" method="get">
+    <form method="get">
+        <input type="hidden" name="controller" value="SearchResultController">
         <div class="text-input-group">
             <label for="search">Znajdź produkt</label>
             <input name="search" id="search" type="text">
