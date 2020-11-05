@@ -8,6 +8,6 @@ abstract class Model
 {
 
     protected $tableName;
-    
 
+    
 }

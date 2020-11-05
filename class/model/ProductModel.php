@@ -1,5 +1,11 @@
 <?php
 
+defined("MAIN") or die("brak dostepu");
+
+namespace Model;
+
+require_once(MODEL_CLASS_PATH);
+
 class ProductModel extends Model
 {
     public function addNewProduct()
@@ -14,7 +20,8 @@ class ProductModel extends Model
 
     public function searchProducts($filtr)
     {
-       
+       global $db;
+       return $db->querySelect("SELECT _name, _price, _discount, _picture FROM _Product LIKE '%$filtr'%");
     }
 
     public function deleteProduct($id)
