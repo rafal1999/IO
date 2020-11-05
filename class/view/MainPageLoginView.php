@@ -11,7 +11,13 @@ class MainPageLoginView extends View
         parent::__construct();
         $this->templateName = 'MainPageLoginView.html';
         $this->setProperty('singleColumnClass', 'login-column');
+        $this->setProperty('incorrect', false);
         $this->headerButtons->hideButton('login');
+        $this->headerButtons->showButton('changeShop');
+    }
+
+    function setIncorrect(){
+        $this->setProperty('incorrect', true);
     }
 }
 ?>
