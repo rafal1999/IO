@@ -18,7 +18,7 @@ if(!empty($controllerName) && file_exists(CONTROLLER_PATH.$controllerName.".php"
     require_once(CONTROLLER_PATH.$controllerName.".php");
 
     $className = "Controller\\".$controllerName;
-    if(file_exists($className)){
+    if(class_exists($className)){
         $controller = new $className();
     }else{
         loadDefaultController();
@@ -34,8 +34,10 @@ function loadDefaultController(){
     require_once(CONTROLLER_PATH."MainPageController.php");
 
     $className = "Controller\\MainPageController";
-    if(file_exists($className)){
+    if(class_exists($className)){
         $controller = new $className();
+    }else{
+        echo "Error: class doesn't exist ".$className;
     }
 }
 

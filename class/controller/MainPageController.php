@@ -9,25 +9,30 @@ class MainPageController extends Controller
 {   
 
     private $modelProducts;
-    private $viewModel;
 
-    function __construct(array $data){
+    private $viewMainPage;
+    private $viewHeader;
 
-        $this->modelProducts = $this->loadModel("ProductModel");
+    function __construct(){
 
-        //get shops
+        try{
+           // $this->modelProducts = $this->loadModel("ProductModel");
+            $this->viewMainPage = $this->loadView("MainPageView");
+            $this->viewHeader = $this->loadView("HeaderButtons");
+        }catch(\Exception $e){
+            echo $e->getMessage() . "\n";
+        }
 
-        showMenu();
-        showPage();
-
+        $this->showMenu();
+        $this->showPage();
     }
 
     function showMenu(){
-
+        
     } 
 
     function showPage(){
-
+        $this->viewMainPage->output();
     }
 
 }
