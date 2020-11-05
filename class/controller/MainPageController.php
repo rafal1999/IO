@@ -8,10 +8,10 @@ require_once(CONTROLLER_CLASS_PATH);
 class MainPageController extends Controller
 {   
 
-    private $modelProducts;
+    protected $modelProducts;
 
-    private $viewMainPage;
-    private $viewHeader;
+    protected $viewMainPage;
+    protected $viewHeader;
 
     function __construct(){
 
@@ -22,18 +22,29 @@ class MainPageController extends Controller
         }catch(\Exception $e){
             echo $e->getMessage() . "\n";
         }
+        
+    }
 
+    protected function showMenu(){
+        
+    }
+
+    //pokazuje główną stronę
+    protected function showPage(){
+
+        if(empty($_REQUEST['_idShop'])){
+            $this->viewMainPage->addShop(['_name'=>'Sklep1', '_idShop'=>'0']);
+            $this->viewMainPage->output();
+        }else{
+            $this->viewMainPage->output();
+        }
+  
+    }
+
+    public function execute(){
         $this->showMenu();
         $this->showPage();
-    }
-
-    function showMenu(){
-        
     } 
-
-    function showPage(){
-        $this->viewMainPage->output();
-    }
 
 }
 

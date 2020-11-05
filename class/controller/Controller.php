@@ -52,11 +52,19 @@ abstract class Controller
         return $object;
     }
 
-    protected function changeController($controller, $data){
-        //todo
+    protected function changeController($controller, array $data){
+        
+        $datas = "";
 
+        foreach($data as $key => $row){
+            $datas .= "&" . $key . "=". htmlentities($row, ENT_QUOTES, 'UTF-8');
+        }
 
+        header('index.php?controller='.$controller.$datas);
+        exit();
     } 
+
+    abstract public function execute();
 
 }
 

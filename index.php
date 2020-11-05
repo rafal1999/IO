@@ -20,6 +20,7 @@ if(!empty($controllerName) && file_exists(CONTROLLER_PATH.$controllerName.".php"
     $className = "Controller\\".$controllerName;
     if(class_exists($className)){
         $controller = new $className();
+        $controller->execute();
     }else{
         loadDefaultController();
     }
@@ -36,6 +37,7 @@ function loadDefaultController(){
     $className = "Controller\\MainPageController";
     if(class_exists($className)){
         $controller = new $className();
+        $controller->execute();
     }else{
         echo "Error: class doesn't exist ".$className;
     }
