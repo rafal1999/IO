@@ -21,64 +21,64 @@
 <main>
     <article class="single-column-layout <?php echo htmlentities($singleColumnClass, ENT_QUOTES, 'UTF-8') ?>">
         
-<h2>Zakładanie konta</h2>
-<form class="full-width" action="?controller=RegisterController&and;idshop=<?php echo htmlentities($idShop, ENT_QUOTES, 'UTF-8') ?>" method="post">
-    <div class="text-input-group">
-        <label for="email">E-mail*</label>
-        <input type="text" id="email" name="email">
-    </div>
-    <div class="text-input-group">
-        <label for="password">Hasło*</label>
-        <input type="password" id="password" name="password">
-    </div>
-    <div class="text-input-group">
-        <label for="password-repeat">Powtórz hasło*</label>
-        <input type="password" id="password-repeat" name="password-repeat">
-    </div>
+<form class="full-width" action="?controller=AfterCheckoutController" method="post">
+                
+    <h2>Dane do wysyłki</h2>
     <div class="columns-inside">
         <div class="text-input-group column-first-name">
             <label for="first-name">Imię*</label>
-            <input type="text" id="first-name" name="first-name">
+            <input type="text" id="first-name" name="first-name" value="<?php echo htmlentities($user['_firstName'], ENT_QUOTES, 'UTF-8') ?>">
         </div>
         <div class="text-input-group column-last-name">
             <label for="last-name">Nazwisko*</label>
-            <input type="text" id="last-name" name="last-name">
+            <input type="text" id="last-name" name="last-name" value="<?php echo htmlentities($user['_lastName'], ENT_QUOTES, 'UTF-8') ?>">
         </div>
     </div>
     <div class="columns-inside">
         <div class="text-input-group column-street">
             <label for="street">Ulica</label>
-            <input type="text" id="street" name="street">
+            <input type="text" id="street" name="street"  value="<?php echo htmlentities($user['_street'], ENT_QUOTES, 'UTF-8') ?>">
         </div>
         <div class="text-input-group column-house-number">
             <label for="house-number">Numer domu*</label>
-            <input type="text" id="house-number" name="house-number">
+            <input type="text" id="house-number" name="house-number"  value="<?php echo htmlentities($user['_houseNumber'], ENT_QUOTES, 'UTF-8') ?>">
         </div>
-        <div class="text-input-group  column-flat-number">
+        <div class="text-input-group column-flat-number">
             <label for="flat-number">Numer lokalu</label>
-            <input type="text" id="flat-number" name="flat-number">
+            <input type="text" id="flat-number" name="flat-number" value="<?php echo htmlentities($user['_flatNumber'], ENT_QUOTES, 'UTF-8') ?>">
         </div>
     </div>
     <div class="columns-inside">
         <div class="text-input-group column-postal-code">
             <label for="postal-code">Kod pocztowy*</label>
-            <input type="text" id="postal-code" name="postal-code">
+            <input type="text" id="postal-code" name="postal-code" value="<?php echo htmlentities($user['_postalCode'], ENT_QUOTES, 'UTF-8') ?>">
         </div>
         <div class="text-input-group column-town">
             <label for="town">Miejscowość*</label>
-            <input type="text" id="town" name="town">
+            <input type="text" id="town" name="town" value="<?php echo htmlentities($user['_town'], ENT_QUOTES, 'UTF-8') ?>">
         </div>
+    </div>
+    <div class="text-input-group">
+        <label for="email">E-mail*</label>
+        <input type="text" id="email" name="email" value="<?php echo htmlentities($user['_email'], ENT_QUOTES, 'UTF-8') ?>">
     </div>
     <div class="text-input-group column-phone-number">
         <label for="phone-number">Telefon</label>
-        <input type="text" id="phone-number" name="phone-number">
+        <input type="text" id="phone-number" name="phone-number"  value="<?php echo htmlentities($user['_phoneNumber'], ENT_QUOTES, 'UTF-8') ?>">
+    </div>
+    <p>* pole obowiązkowe</p>
+    
+    <h2>Forma płatności</h2>
+    <div class="radio-group">
+        <label><input type="radio" name="payment-method"> Karta płatnicza</label>
+        <label><input type="radio" name="payment-method"> Przelew internetowy</label>
+        <label><input type="radio" name="payment-method"> Płatność przy odbiorze</label>
     </div>
     <div class="checkbox-group">
         <label><input type="checkbox" name="accept-conditions" id="accept-conditions"> Akceptuję regulamin sklepu</label>
     </div>
-    <p>* pole obowiązkowe</p>
     <div class="submit-group">
-        <button type="submit" name="submit-account">Załóż konto</button>
+        <button type="submit" name="submit-order">Zamawiam i płacę</button>
     </div>
 </form>
 

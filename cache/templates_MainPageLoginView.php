@@ -22,7 +22,7 @@
     <article class="single-column-layout <?php echo htmlentities($singleColumnClass, ENT_QUOTES, 'UTF-8') ?>">
         
 <h2>Logowanie</h2>
-<form action="login.html" method="post" class="full-width">
+<form action="?controller=LoginController&and;idshop=<?php echo htmlentities($idShop, ENT_QUOTES, 'UTF-8') ?>" method="post" class="full-width">
     <div class="text-input-group">
         <label for="login">E-mail</label>
         <input type="text" id="login" name="login">

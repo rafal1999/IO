@@ -107,6 +107,21 @@ button:hover, .button-like:hover{
     background-color: rgb(0, 100, 0);
 }
 
+.button-delete{
+    color:inherit;
+    background-color:transparent;
+    border-style:none;
+    padding:5px;
+}
+.button-delete:hover{
+    background-color:transparent;
+}
+
+.button-delete::before{
+    font-size:40px;
+   content:"\00D7"
+}
+
 input[type="text"], input[type="password"]{
     padding:0.3em 0.5em;
     font:inherit;
@@ -393,7 +408,7 @@ table.cart-table td:nth-child(3) input{
     width:2em;
 }
 
-table.cart-table td:nth-child(4){
+table.cart-table td:nth-child(5){
     font-size:30px;
     text-align:right;
 }
@@ -408,4 +423,34 @@ table.cart-table td:nth-child(4){
     
     font-size:30px;
     
+}
+
+table.order-summary-table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+table.order-summary-table td{
+    border-top:2pt solid rgb(230,230,230);
+    padding:5px;
+}
+
+table.order-summary-table td:nth-child(1){
+    width:100px;
+    height:100px;
+}
+
+table.order-summary-table td:nth-child(1) img{
+    width:100px;
+    height:100px;
+}
+
+table.order-summary-table td:nth-child(3) input{
+    font-size:inherit;
+    width:2em;
+}
+
+table.order-summary-table td:nth-child(4){
+    font-size:30px;
+    text-align:right;
 }

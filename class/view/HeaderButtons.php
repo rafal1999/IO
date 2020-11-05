@@ -5,12 +5,12 @@ namespace View;
 
 class HeaderButtons{
     private $buttons = [
-        'cart' => ['tag'=>'a', 'text'=>'Pokaż koszyk', 'url'=>'CartController', 'visible'=>false],
-        'changeShop' => ['tag'=>'a', 'text'=>'Zmień sklep', 'url'=>'MainPageController', 'visible'=>false],
-        'register' => ['tag'=>'a', 'text'=>'Załóż konto', 'url'=>'RegisterController', 'visible'=>false],
-        'manageAccount' => ['tag'=>'a', 'text'=>'Ustawienia konta', 'url'=>'registerController?action=manage', 'visible'=>false],
-        'login' => ['tag'=>'a', 'text'=>'Zaloguj się', 'url'=>'LoginController', 'visible'=>false],
-        'logout' => ['tag'=>'a', 'text'=>'Wyloguj się', 'url'=>'LoginController?action=logout', 'visible'=>false],
+        'cart' => ['tag'=>'a', 'text'=>'Pokaż koszyk', 'url'=>'?controller=CartController', 'visible'=>false],
+        'changeShop' => ['tag'=>'a', 'text'=>'Zmień sklep', 'url'=>'?controller=MainPageController', 'visible'=>false],
+        'register' => ['tag'=>'a', 'text'=>'Załóż konto', 'url'=>'?controller=RegisterController', 'visible'=>false],
+        'manageAccount' => ['tag'=>'a', 'text'=>'Ustawienia konta', 'url'=>'?controller=registerController&and;action=manage', 'visible'=>false],
+        'login' => ['tag'=>'a', 'text'=>'Zaloguj się', 'url'=>'?controller=LoginController', 'visible'=>false],
+        'logout' => ['tag'=>'a', 'text'=>'Wyloguj się', 'url'=>'?controller=LoginController&and;action=logout', 'visible'=>false],
     ];
 
     public function showButton(string $buttonName){

@@ -25,7 +25,7 @@
 <ul class="shop-list">
     <?php foreach ($shops as $shop): ?>
     <li>
-        <a href="MainPageController?shop=<?php echo htmlentities($shop['_idShop'], ENT_QUOTES, 'UTF-8') ?>"><?php echo htmlentities($shop['_name'], ENT_QUOTES, 'UTF-8') ?></a>
+        <a href="?controller=MainPageController&and;idshop=<?php echo htmlentities($shop['_idShop'], ENT_QUOTES, 'UTF-8') ?>"><?php echo htmlentities($shop['_name'], ENT_QUOTES, 'UTF-8') ?></a>
     </li>
     <?php endforeach; ?>
 </ul>

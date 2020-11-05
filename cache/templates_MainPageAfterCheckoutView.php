@@ -33,7 +33,7 @@
 </section>
 <section>
     <h3>Szczegóły zamówienia</h3>
-    <table class="cart-table">
+    <table class="order-summary-table">
     <?php foreach($productsInCart as $product): ?>
         <tr>
             <td><img src="<?php echo htmlentities(PRODUCT_PICTURE_PATH . $product['_picture'], ENT_QUOTES, 'UTF-8') ?>"></td>

@@ -27,7 +27,8 @@
     <tr>
         <td><img src="<?php echo htmlentities(PRODUCT_PICTURE_PATH .  $product['_picture'], ENT_QUOTES, 'UTF-8') ?>"></td>
         <td><?php echo htmlentities($product['_name'], ENT_QUOTES, 'UTF-8') ?></td>
-        <td><input type="text" value="<?php echo htmlentities($product['_count'], ENT_QUOTES, 'UTF-8') ?>"> szt</td>
+        <td><input type="text" value="<?php echo htmlentities($product['_count'], ENT_QUOTES, 'UTF-8') ?>" class="input-number-in-cart" data-product-id="<?php echo htmlentities($product['_idProduct'], ENT_QUOTES, 'UTF-8') ?>"> szt</td>
+        <td><button class="button-delete button-delete-cart" title="Usuń" data-product-id="<?php echo htmlentities($product['_idProduct'], ENT_QUOTES, 'UTF-8') ?>"></button></td>
         <td><?php echo htmlentities($product['_totalPrice'], ENT_QUOTES, 'UTF-8') ?> zł</td>
     </tr>
     <?php endforeach; ?>
@@ -36,8 +37,8 @@
     Razem: <span class="cart-total-price"><?php echo htmlentities($totalPrice, ENT_QUOTES, 'UTF-8') ?> zł</span>
 </div>
 <div class="submit-group">
-    <a href="MainPageController" class="button-like">Kontynuuj zakupy</a>
-    <a href="CheckoutController" class="button-like">Do kasy</a>
+    <a href="?controller=MainPageController" class="button-like">Kontynuuj zakupy</a>
+    <a href="?controller=CheckoutController" class="button-like">Do kasy</a>
 </div>
 
     </article>
