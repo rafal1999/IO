@@ -45,6 +45,8 @@ class MainPageController extends Controller
             $this->_idShop = $_SESSION['_idShop'];
         }
 
+        $this->viewMainPage->setIdShop($this->_idShop);
+
     }
 
     protected function setCategories(){
