@@ -21,8 +21,7 @@ class SearchResultController extends MainPageController
     protected function showPage(){   
 
         $this->viewMainPage->specialOffersMode();
-        $this->viewMainPage->addCategory(["_idCategory" => 0, "_categoryName" => "Test"]);
-        $this->viewMainPage->addCategory(["_idCategory" => 1, "_categoryName" => "Test2"]);
+        $this->setCategories();
 
         $this->viewMainPage->addProduct([]);
             

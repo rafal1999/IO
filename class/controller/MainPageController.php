@@ -35,19 +35,26 @@ class MainPageController extends Controller
 
     private function checkShop(){
 
-        $this->_idShop = isset($_REQUEST['_idShop']) ? intval($_REQUEST['_idShop']) :(!empty($_SESSION['_idShop']) ? $_SESSION['_idShop'] : null);
-
-        if($this->_idShop !== null && $this->_idShop >= 0){
-            $_SESSION['_idShop'] = $this->_idShop;
-        }else{
-            $_SESSION['_idShop'] = null;
-            $this->_idShop = null;
+        if(isset($_REQUEST['_idShop'])){
+            if(intval($_REQUEST['_idShop']) < 0){
+                $_SESSION['_idShop'] = null;
+            }else{
+                $this->_idShop = $_SESSION['_idShop'] = intval($_REQUEST['_idShop']);
+            }
+        }else if(isset($_SESSION['_idShop']) && intval($_SESSION['_idShop']) >= 0){
+            $this->_idShop = $_SESSION['_idShop'];
         }
+
+    }
+
+    protected function setCategories(){
+        $this->viewMainPage->addCategory(["_idCategory" => 0, "_categoryName" => "Test"]);
+        $this->viewMainPage->addCategory(["_idCategory" => 1, "_categoryName" => "Test2"]); 
     }
 
     //pokazuje główną stronę
     protected function showPage(){
-
+        
         if($this->_idShop === null){
             $this->viewMainPage->addShop(['_name'=>'Sklep1', '_idShop'=>'0']);
             $this->viewMainPage->output();
