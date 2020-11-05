@@ -6,6 +6,12 @@ namespace Model;
 abstract class Model
 {
 
-    private $tableName;
+    protected $tableName;
+    
+    function __construct(){
+        $this->tableName = new Database();
+        $this->tableName->connect();
+    }
+    
 
 }

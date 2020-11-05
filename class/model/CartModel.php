@@ -4,7 +4,7 @@ class CartModel extends Model
 {
     public function addToCart($idProduct, $idClient)
     {
-
+        
     }
 
     public function getCart()
