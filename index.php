@@ -6,14 +6,37 @@ require_once("config/const.php");
 
 require_once(CLASS_PATH . "Database.php");
 
-//todo interpreter
+$db = new Util\Database();
+$db->connect();
 
-require_once(CONTROLLER_PATH . "SampleController.php");
+//interpreter
 
-$inputArray = [
-    'first' => 1
-];
+$controllerName = isset($_REQUEST['controller']) ? $_REQUEST['controller'] : null;
 
-$sample = new Controller\SampleController($inputArray);
+if(!empty($controllerName) && file_exists(CONTROLLER_PATH.$controllerName.".php")){
+
+    require_once(CONTROLLER_PATH.$controllerName.".php");
+
+    $className = "Controller\\".$controllerName;
+    if(file_exists($className)){
+        $controller = new $className();
+    }else{
+        loadDefaultController();
+    }
+
+}else{
+    loadDefaultController();
+}
+
+
+function loadDefaultController(){
+
+    require_once(CONTROLLER_PATH."MainPageController.php");
+
+    $className = "Controller\\MainPageController";
+    if(file_exists($className)){
+        $controller = new $className();
+    }
+}
 
 ?>

@@ -12,7 +12,6 @@ class Database
 
     function __construct()
     {
-
         $this->settings = [
             "adress" => "localhost"
             ,"port" => "5432"
@@ -36,7 +35,7 @@ class Database
         $result = pg_query($this->conn, $query);
 
         if (!$result) {
-            throw new Exception("Error");
+            throw new \Exception("Error");
             return null;
         }
 

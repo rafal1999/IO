@@ -66,15 +66,13 @@ abstract class View
     }
 
     private function createArrayProperty(string $name){
-        if(isset($this->templateArray[$name]))
-            $this->templateArray[$name] = [$this->templateArray[$name]];
-        else
+        if(!isset($this->templateArray[$name]) || !is_array($this->templateArray[$name]))
             $this->templateArray[$name] = [];
     }
 
     //Dodaje wartość do tablicy o nazwie $name w $templateArray
     protected function addArrayProperty(string $name, $value){
-        if(!is_array($this->templateArray[$name])){
+        if(!isset($this->templateArray[$name]) || !is_array($this->templateArray[$name])){
             $this->createArrayProperty($name);
         }
         $this->templateArray[$name][] = $value;

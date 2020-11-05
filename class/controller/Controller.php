@@ -20,10 +20,10 @@ abstract class Controller
                 if(class_exists($className)){
                     $object = new $className ();
                 }else{
-                    //throw 'None class in file '.$name;
+                    throw new \Exception('None class in file '.$name);
                 }
             }else{
-                //throw 'None file of class '.$name;
+                throw new \Exception('None file of class '.$name);
             }
         }else{
             $object = new $className();
@@ -41,11 +41,10 @@ abstract class Controller
                 if(class_exists($className)){
                     $object = new $className();
                 }else{
-                    //throw new Exception('None class in file '.$name);
-                    echo $className;
+                    throw new \Exception('None class in file '.$name);
                 }
             }else{
-                //throw new Exception('None file of class '.$name);
+                throw new \Exception('None file of class '.$name);
             }
         }else{
             $object = new $className();
