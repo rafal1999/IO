@@ -58,7 +58,11 @@
         <img src="<?php echo htmlentities(PRODUCT_PICTURE_PATH .  $product['_picture'], ENT_QUOTES, 'UTF-8') ?>" alt="Ilustracja produktu">
     </div>
     <div class="product-info">
+<<<<<<< HEAD
         <h3><a href="?controller=productController&and;idProduct=<?php echo htmlentities(urlencode($product['_idProduct']), ENT_QUOTES, 'UTF-8') ?>"><?php echo htmlentities($product['_name'], ENT_QUOTES, 'UTF-8') ?></a></h3>
+=======
+        <h3><a href="productControler?idProduct=<?php echo htmlentities(urlencode($product['_idProduct']), ENT_QUOTES, 'UTF-8') ?>"><?php echo htmlentities($product['_name'], ENT_QUOTES, 'UTF-8') ?></a></h3>
+>>>>>>> 8c317ec6b06254bab136e168a5d70ef7c5876e46
         <p class="product-description"><?php echo htmlentities($product['_description'], ENT_QUOTES, 'UTF-8') ?></p>
         <?php if($product['_discount'] > 0): ?>
             <div class="product-old-price"><?php echo htmlentities($product['_price'], ENT_QUOTES, 'UTF-8') ?> zł</div>

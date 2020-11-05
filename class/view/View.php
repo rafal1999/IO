@@ -75,7 +75,11 @@ abstract class View
         if(!isset($this->templateArray[$name]) || !is_array($this->templateArray[$name])){
             $this->createArrayProperty($name);
         }
-        $this->templateArray[$name][] = $value;
+
+        if(!empty($value)){
+            $this->templateArray[$name][] = $value;
+        }
+  
     }
 
     //Czynności które mają się wykonać tuż przed wygenerowaniem strony

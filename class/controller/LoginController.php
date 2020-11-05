@@ -23,7 +23,7 @@ class LoginController extends MainPageController
     }
 
     protected function showPage(){   
-        //$this->viewMainPage->setProperty('incorrect' , 0);   
+        //$this->viewMainPage->setIncorrect();   
         $this->viewMainPage->output();
     }
 
