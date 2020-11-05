@@ -51,6 +51,10 @@ abstract class View
         $this->setProperty('motto', $name);
     }
 
+    public function setIdShop($idShop){
+        $this->setProperty('idShop', $idShop);
+    }
+
     //Wyświetla widok
     public function output(){
         if(isset($this->templateName)){
