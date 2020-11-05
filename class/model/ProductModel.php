@@ -14,8 +14,7 @@ class ProductModel extends Model
 
     public function searchProducts($filtr)
     {
-       $query = "SELECT _idProduct, _name, _price, _discount, _picture FROM _Product WHERE _name == '$filtr'";
-       return $this->d->querySelect($query);
+       
     }
 
     public function deleteProduct($id)
