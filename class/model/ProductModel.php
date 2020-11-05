@@ -21,7 +21,7 @@ class ProductModel extends Model
     public function searchProducts($filtr)
     {
        global $db;
-       return $db->querySelect("SELECT _name, _price, _discount, _picture FROM _Product LIKE '%$filtr'%");
+       return $db->querySelect("SELECT _name, _price, _discount, _picture FROM _Product WHERE _name LIKE '%$filtr'%");
     }
 
     public function deleteProduct($id)

@@ -10,7 +10,8 @@ class ShopModel extends Model
 {
     public function addNewShow($data)
     {
-
+        global $db;
+        $db->query("INSERT INTO _shop (_idproductstorage,_idShop,_name,_idmanager,_iddriver) VALUES ($data[0], $data[1],'$data[2]', $data[3], $data[4])");
     }
 
     public function deleteShow($id)
