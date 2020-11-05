@@ -1,12 +1,18 @@
 {% extends templates/GeneralShop.html %}
 {% block shopContent %}
-<h2>{{{ $product['_name'] }}}</h2>
-<article class="product-details">
-    
+<h2>{{{ $resultsHeader }}}</h2>
+{% if(isset($resultsDescription)): %}
+<p>
+    {{{ $resultsDescription }}}
+</p>
+{% endif; %}
+{% foreach($products as $product): %}
+<article class="product">
     <div class="product-image">
-        <img src="images/{{{ $product['_picture'] }}}" alt="Ilustracja produktu">
+        <img src="{{{ PRODUCT_PICTURE_PATH .  $product['_picture'] }}}" alt="Ilustracja produktu">
     </div>
     <div class="product-info">
+        <h3><a href="productControler?idProduct={{{ urlencode($product['_idProduct']) }}}">{{{ $product['_name'] }}}</a></h3>
         <p class="product-description">{{{ $product['_description'] }}}</p>
         {% if($product['_discount'] > 0): %}
             <div class="product-old-price">{{{ $product['_price'] }}} zł</div>
@@ -14,9 +20,10 @@
         {% else: %}
             <div class="product-price">{{{ $product['_price'] }}} zł</div>
         {% endif; %}
-        <div class="submit-group">
-            <button type="button" value="{{{ $product['_idProduct'] }}}" class="add-to-cart">Do koszyka</button>
-        </div>
+    </div>
+    <div class="product-buttons">
+        <button type="button" value="{{{ $product['_idProduct'] }}}"  class="add-to-cart">Do koszyka</button>
     </div>
 </article>
+{% endforeach; %}
 {% endblock %}

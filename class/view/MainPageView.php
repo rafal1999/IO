@@ -9,16 +9,12 @@ class MainPageView extends View
 {
     function __construct(){
         parent::__construct();
-        $this->templateName = 'MainSite.html';
+        $this->templateName = 'MainPageView.html';
         $this->setProperty('title', BUSINESS_NAME);
         $this->setProperty('motto', 'Najlepsze produkty najbliżej Ciebie');
         $this->setProperty('singleColumnClass', 'main-page-column');
-        //$this->templateArray['title'] = BUSINESS_NAME;
-        //$this->templateArray['motto'] = 'Najlepsze produkty najbliżej Ciebie';
-
-        //$this->templateArray['singleColumnClass'] = 'main-page-column';
-        //$this->templateArray['shops'] = [];
     }
+    //$shop - wiersz z tabeli _Shops
     public function addShop(array $shop){
         $this->addArrayProperty('shops', $shop);
     }

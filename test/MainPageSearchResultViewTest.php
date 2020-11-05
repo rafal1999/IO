@@ -10,5 +10,4 @@ $view->addProduct(['_idProduct'=>4, '_name'=>'pralka', '_price' => 999, '_discou
 $view->setShopName('Kozia Wólka');
 
 
-
 $view->output();

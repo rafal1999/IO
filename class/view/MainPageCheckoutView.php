@@ -11,10 +11,13 @@ class MainPageCheckoutView extends View
     function __construct(){
         parent::__construct();
         $this->templateName = 'MainPageCheckoutView.html';
-        $this->templateArray['title'] = BUSINESS_NAME;
-        $this->templateArray['motto'] = 'Najlepsze produkty najbliżej Ciebie';
-    
-        $this->templateArray['singleColumnClass'] = 'main-page-column';
+        $this->setProperty('singleColumnClass', 'account-column');
+        $this->setProperty('user', []);
+    }
+
+    //Ustawia dane użytkownika do wstępnego wypełnienia formularza
+    public function setUser(array $user){
+        $this->setProperty('user', $user);
     }
 
 }

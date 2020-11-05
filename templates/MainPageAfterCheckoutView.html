@@ -1,0 +1,30 @@
+{% extends templates/SingleColumnLayout.html %}
+{% block main %}
+<h2>{{{ $statusHeader }}}</h2>
+<p>
+    {{{ $statusDescription }}}
+</p>
+<section>
+    <h3>Adres dostawy</h3>
+    <p>
+        {{{ $order['_address'] }}}
+    </p>
+</section>
+<section>
+    <h3>Szczegóły zamówienia</h3>
+    <table class="cart-table">
+    {% foreach($productsInCart as $product): %}
+        <tr>
+            <td><img src="{{{ PRODUCT_PICTURE_PATH . $product['_picture'] }}}"></td>
+            <td>{{{ $product['_name'] }}}</td>
+            <td><input type="text" value="{{{ $product['_count'] }}}"> szt</td>
+            <td>{{{ $product['_totalPrice'] }}} zł</td>
+        </tr>
+    {% endforeach; %}
+    </table>
+
+    <div class="cart-summary">
+        Razem: <span class="cart-total-price">{{{ $totalPrice }}} zł</span>
+    </div>
+</section>
+{% endblock %}

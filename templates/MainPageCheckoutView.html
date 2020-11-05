@@ -6,44 +6,44 @@
     <div class="columns-inside">
         <div class="text-input-group column-first-name">
             <label for="first-name">Imię*</label>
-            <input type="text" id="first-name" name="first-name">
+            <input type="text" id="first-name" name="first-name" value="{{{ $user['_firstName'] }}}">
         </div>
         <div class="text-input-group column-last-name">
             <label for="last-name">Nazwisko*</label>
-            <input type="text" id="last-name" name="last-name">
+            <input type="text" id="last-name" name="last-name" value="{{{ $user['_lastName'] }}}">
         </div>
     </div>
     <div class="columns-inside">
         <div class="text-input-group column-street">
             <label for="street">Ulica</label>
-            <input type="text" id="street" name="street">
+            <input type="text" id="street" name="street"  value="{{{ $user['_street'] }}}">
         </div>
         <div class="text-input-group column-house-number">
             <label for="house-number">Numer domu*</label>
-            <input type="text" id="house-number" name="house-number">
+            <input type="text" id="house-number" name="house-number"  value="{{{ $user['_houseNumber'] }}}">
         </div>
         <div class="text-input-group column-flat-number">
             <label for="flat-number">Numer lokalu</label>
-            <input type="text" id="flat-number" name="flat-number">
+            <input type="text" id="flat-number" name="flat-number" value="{{{ $user['_flatNumber'] }}}">
         </div>
     </div>
     <div class="columns-inside">
         <div class="text-input-group column-postal-code">
             <label for="postal-code">Kod pocztowy*</label>
-            <input type="text" id="postal-code" name="postal-code">
+            <input type="text" id="postal-code" name="postal-code" value="{{{ $user['_postalCode'] }}}">
         </div>
         <div class="text-input-group column-town">
             <label for="town">Miejscowość*</label>
-            <input type="text" id="town" name="town">
+            <input type="text" id="town" name="town" value="{{{ $user['_town'] }}}">
         </div>
     </div>
     <div class="text-input-group">
         <label for="email">E-mail*</label>
-        <input type="text" id="email" name="email">
+        <input type="text" id="email" name="email" value="{{{ $user['_email'] }}}">
     </div>
     <div class="text-input-group column-phone-number">
         <label for="phone-number">Telefon</label>
-        <input type="text" id="phone-number" name="phone-number">
+        <input type="text" id="phone-number" name="phone-number"  value="{{{ $user['_phoneNumber'] }}}">
     </div>
     <p>* pole obowiązkowe</p>
     

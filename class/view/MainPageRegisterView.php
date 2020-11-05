@@ -10,10 +10,8 @@ class MainPageRegisterView extends View
     function __construct(){
         parent::__construct();
         $this->templateName = 'MainPageRegisterView.html';
-        $this->templateArray['title'] = BUSINESS_NAME;
-        $this->templateArray['motto'] = 'Najlepsze produkty najbliżej Ciebie';
-    
-        $this->templateArray['singleColumnClass'] = 'main-page-column';
+        $this->setProperty('singleColumnClass', 'account-column');
+        $this->headerButtons->hideButton('register');
     }
 }
 ?>

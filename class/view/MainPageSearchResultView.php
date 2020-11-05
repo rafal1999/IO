@@ -9,20 +9,15 @@ class MainPageSearchResultView extends View
 {
     function __construct(){
         parent::__construct();
-        $this->templateName = 'ShopSearchResults.html';
+        $this->templateName = 'MainPageSearchResultView.html';
         $this->setProperty('resultsHeader', 'Wyniki wyszukiwania');
-
-       
+        $this->headerButtons->showButton('cart');
+        $this->headerButtons->showButton('changeShop');
     }
 
     //Używać tej metody w przypadku wyświetlania ofert na stronie głównej
     public function specialOffersMode(){
         $this->setProperty('resultsHeader', 'Oferty');
-    }
-
-    //Ustawia nazwę sklepu do wyświetlenia na górze strony
-    public function setShopName(string $name){
-        $this->setProperty('motto', $name);
     }
 
     //Opis wyników, np. $description='Szukane hasło: "kurczak"'

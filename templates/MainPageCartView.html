@@ -1,0 +1,21 @@
+{% extends templates/SingleColumnLayout.html %}
+{% block main %}
+<h2>Koszyk</h2>
+<table class="cart-table">
+    {% foreach($productsInCart as $product): %}
+    <tr>
+        <td><img src="{{{ PRODUCT_PICTURE_PATH .  $product['_picture'] }}}"></td>
+        <td>{{{ $product['_name'] }}}</td>
+        <td><input type="text" value="{{{ $product['_count'] }}}"> szt</td>
+        <td>{{{ $product['_totalPrice'] }}} zł</td>
+    </tr>
+    {% endforeach; %}
+</table>
+<div class="cart-summary">
+    Razem: <span class="cart-total-price">{{{ $totalPrice }}} zł</span>
+</div>
+<div class="submit-group">
+    <a href="MainPageController" class="button-like">Kontynuuj zakupy</a>
+    <a href="CheckoutController" class="button-like">Do kasy</a>
+</div>
+{% endblock %}

@@ -9,11 +9,9 @@ class MainPageLoginView extends View
 {   
     function __construct(){
         parent::__construct();
-        $this->templateName = 'LoginSite.html';
-        $this->templateArray['title'] = BUSINESS_NAME;
-        $this->templateArray['motto'] = 'Najlepsze produkty najbliżej Ciebie';
-    
-        $this->templateArray['singleColumnClass'] = 'main-page-column';
+        $this->templateName = 'MainPageLoginView.html';
+        $this->setProperty('singleColumnClass', 'login-column');
+        $this->headerButtons->hideButton('login');
     }
 }
 ?>

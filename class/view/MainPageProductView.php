@@ -9,15 +9,10 @@ class MainPageProductView extends View
 {
     function __construct(){
         parent::__construct();
-        $this->templateName = 'ShopProduct.html';
-        $this->setProperty('resultsHeader', 'Wyniki wyszukiwania');
-
+        $this->templateName = 'MainPageProductView.html';
+        $this->headerButtons->showButton('cart');
+        $this->headerButtons->showButton('changeShop');
        
-    }
-
-    //Ustawia nazwę sklepu do wyświetlenia na górze strony
-    public function setShopName(string $name){
-        $this->setProperty('motto', $name);
     }
 
     //Dodaje jedną kategorię do menu z lewej strony

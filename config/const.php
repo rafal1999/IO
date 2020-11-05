@@ -16,7 +16,9 @@ define("TEMPLATES_PATH", "templates/");
 define("CACHE_PATH", "cache/");
 define("CSS_PATH", "css/");
 define("IMAGES_PATH", "images/");
+define("PRODUCT_PICTURE_PATH", "images/");
 
-define("BUSINESS_NAME", "JanuszPol")
+define("BUSINESS_NAME", "JanuszPol");
+define("BUSINESS_MOTTO", "Najlepsze produkty najbliżej Ciebie");
 
 ?>

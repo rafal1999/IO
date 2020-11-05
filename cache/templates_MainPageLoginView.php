@@ -21,14 +21,25 @@
 <main>
     <article class="single-column-layout <?php echo htmlentities($singleColumnClass, ENT_QUOTES, 'UTF-8') ?>">
         
-<h2 class="shop-list-header">Wybierz sklep</h2>
-<ul class="shop-list">
-    <?php foreach ($shops as $shop): ?>
-    <li>
-        <a href="<?php echo htmlentities($shop['url'], ENT_QUOTES, 'UTF-8') ?>"><?php echo htmlentities($shop['name'], ENT_QUOTES, 'UTF-8') ?></a>
-    </li>
-    <?php endforeach; ?>
-</ul>
+<h2>Logowanie</h2>
+<form action="login.html" method="post" class="full-width">
+    <div class="text-input-group">
+        <label for="login">E-mail</label>
+        <input type="text" id="login" name="login">
+    </div>
+    <div class="text-input-group">
+        <label for="password">Hasło</label>
+        <input type="password" id="password" name="password">
+    </div>
+    <?php if($incorrect): ?>
+    <p class="incorrect">
+        Nieprawidłowa nazwa użytkownika lub hasło.
+    </p>
+    <?php endif; ?>
+    <div class="submit-group">
+        <button type="submit" name="submit-login">Zaloguj się</button>
+    </div>
+</form>
 
     </article>
 </main>
