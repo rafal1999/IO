@@ -22,18 +22,21 @@ class CartController extends MainPageController
 
         $products = $this->getProductsFromCookies();
 
+        $allPrice = 0;
+
         if(!empty($products)){
             foreach($products as $product){         
                 $productData = $this->modelProduct->getOneRow("_idproduct", $product[0]);
                 $productData['_count'] = $product[1];
-                $productData['_totalPrice'] = $product[1] * $productData['_price'];
+                $productData['_totalPrice'] = $product[1] * ($productData['_price'] - $productData['_discount']);
+                $allPrice += $productData['_totalPrice'];
                 $this->viewMainPage->addProduct($productData);
             }
         }else{
             $this->viewMainPage->addProduct([]);
         }
         
-        $this->viewMainPage->setTotalPrice(0);
+        $this->viewMainPage->setTotalPrice($allPrice);
         $this->viewMainPage->output();
     }
 

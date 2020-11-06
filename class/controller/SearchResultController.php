@@ -40,7 +40,7 @@ class SearchResultController extends MainPageController
         if($products != null){
             foreach($products as $product){
                 $product['_idProduct'] = $product['_idproduct']; 
-                $product['_discount'] = isset($product['_discountedPrice']) ? $product['_discountedPrice'] : 0; 
+                $product['_discount'] = isset($product['_discountedPrice']) ? $product['_price'] - $product['_discountedPrice'] : $product['_discount']; 
                 $this->viewMainPage->addProduct($product);
             }
         }else{
