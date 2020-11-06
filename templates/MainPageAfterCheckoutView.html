@@ -25,7 +25,7 @@
         <tr>
             <td><img src="{{{ PRODUCT_PICTURE_PATH . $product['_picture'] }}}"></td>
             <td>{{{ $product['_name'] }}}</td>
-            <td><input type="text" value="{{{ $product['_count'] }}}"> szt</td>
+            <td>{{{ $product['_count'] }}} szt</td>
             <td>{{{ $product['_totalPrice'] }}} zł</td>
         </tr>
     {% endforeach; %}
@@ -38,4 +38,5 @@
         <a class="button-like" href="?controller=MainPageController">Powrót do sklepu</a>
     </div>
 </section>
+<script type="text/javascript">clearCart(shopId);</script>
 {% endblock %}
