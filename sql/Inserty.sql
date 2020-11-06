@@ -28,37 +28,17 @@ INSERT INTO _user (_iduser,_login, _password,_type,_firstname,_lastname,_email,_
 -- SZEF FIRMY typ 0
 INSERT INTO _user (_iduser,_login, _password,_type,_firstname,_lastname,_email,_phone,_city,_street,_housenumber,_flatnumber,_postalcode,_lastlogin, _cardnumber)
 			Values (7,'JanuszSkąpy','admin123',0,'Janusz','Skąpy','skapy@gmail.com','100000011','Gliwice','Akademicka','0a',NULL,'44-100','2020-11-3','312345678912001');
-INSERT INTO _Product (_idproduct,_idproductstorage,_name,_description,_idcategory,_price,_discount,_iddeliverer,_picture)
-		   Values (10,2,'Sos do spaghetti','Sos do spaghetti bolognese. Produkt doprawiony wyrazistą kompozycją przypraw. Gęsta konsystencja.',3,8.49,0,3,'sosBolo.jpg');
-INSERT INTO _Product (_idproduct,_idproductstorage,_name,_description,_idcategory,_price,_discount,_iddeliverer,_picture)
-		   Values (11,2,'Steki rybne','Mrożone steki rybne Frosta znakomicie sprawdzają się podczas leniwych dni, kiedy poszukują Państwo szybkiego i prostego sposobu na przygotowanie smacznego obiadu.',3,12.99,2,3,'stekiRybne.jpg');
-INSERT INTO _Product (_idproduct,_idproductstorage,_name,_description,_idcategory,_price,_discount,_iddeliverer,_picture)
-		   Values (12,2,'Kakao','Kakao o obniżonej zawartości tłuszczu (zawartość tłuszczu kakaowego 10-12%)',3,6.99,1,3,'kakao.jpg');
-INSERT INTO _Product (_idproduct,_idproductstorage,_name,_description,_idcategory,_price,_discount,_iddeliverer,_picture)
-		   Values (13,2,'Pizza mrożona','Ta pizza stanowi połączenie szynki z pieczarkami w towarzystwie lubianych przez wszystkich świeżych i aromatycznych przypraw, które nadają jej wyjątkowy smak i doskonały aromat.',3,8.99,0,3,'pizzaGuseppe.jpg');
-INSERT INTO _Product (_idproduct,_idproductstorage,_name,_description,_idcategory,_price,_discount,_iddeliverer,_picture)
-		   Values (14,2,'Sok jabłkowy','Produkt BIO nie zawiera w swoim składzie cukru dodanego ani wody, jest naturalnie tłoczonym i niefiltrowanym sokiem owocowym o niskiej temperaturze pasteryzacji',4,4.49,0,3,'sokJablko.jpg');
-INSERT INTO _Product (_idproduct,_idproductstorage,_name,_description,_idcategory,_price,_discount,_iddeliverer,_picture)
-		   Values (15,2,'Kinder Shoko-Bons','Czekoladki z mlecznej czekolady z nadzieniem mlecznym i orzechami - Smakołyk z mlecznym i orzechowym nadzieniem oblany mleczną czekoladą',2,9.49,0,3,'shocoBons.jpg');
-INSERT INTO _Product (_idproduct,_idproductstorage,_name,_description,_idcategory,_price,_discount,_iddeliverer,_picture)
-		   Values (16,2,'Oreo','Ciasteczka czekoladowe przedzielone delikatnym kremem waniliowym, który wręcz rozpuszcza się w ustach.',2,4.29,0,3,'oreo.jpg');
-INSERT INTO _Product (_idproduct,_idproductstorage,_name,_description,_idcategory,_price,_discount,_iddeliverer,_picture)
-		   Values (17,2,'Lays Prosto z pieca','Chipsy ziemniaczane o smaku grillowanych warzyw',2,4.59,0,3,'laysGrillowaneWarzywa.jpg');
-INSERT INTO _Product (_idproduct,_idproductstorage,_name,_description,_idcategory,_price,_discount,_iddeliverer,_picture)
-	   Values (18,2,'Pomidory malinowe','Charakteryzują się one typowym dla siebie żebrowaniem, dzięki którym posiadają odpowiednią twardość i soczystość.',1,4.99,0,3,'pomidoryFresh.jpg');
-INSERT INTO _Product (_idproduct,_idproductstorage,_name,_description,_idcategory,_price,_discount,_iddeliverer,_picture)
-	   Values (19,2,'Banany','Banany bardzo dobrze wpływają na układ krążenia, wzmacniając serce oraz regulując ciśnienie tętnicze krwi.Pozwalają spokojnie zasypiać i wzmacniają pamięć.',0,4.49,0,3,'bananyFresh');
 
 
 
 
 
 INSERT INTO _shop (_idproductstorage,_idShop,_name,_idmanager,_iddriver) 
-			Values (0,0,'sklepMiodowa',1,4);
+			Values (0,0,'Sklep Miodowa',1,4);
 INSERT INTO _shop (_idproductstorage,_idShop,_name,_idmanager,_iddriver) 
-			Values (1,1,'sklepSloneczna',2,5);
+			Values (1,1,'Sklep Sloneczna',2,5);
 INSERT INTO _shop (_idproductstorage,_idShop,_name,_idmanager,_iddriver) 
-			Values (2,2,'sklepWysoka',3,6);
+			Values (2,2,'Sklep Wysoka',3,6);
 
 
 
