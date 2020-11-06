@@ -122,6 +122,28 @@ INSERT INTO _Product (_idproduct,_idproductstorage,_name,_description,_idcategor
 INSERT INTO _Product (_idproduct,_idproductstorage,_name,_description,_idcategory,_price,_discount,_iddeliverer,_picture)
 	   Values (19,2,'Banany','Banany bardzo dobrze wpływają na układ krążenia, wzmacniając serce oraz regulując ciśnienie tętnicze krwi.Pozwalają spokojnie zasypiać i wzmacniają pamięć.',0,4.49,0,3,'bananyFresh.jpg');
 
+
+INSERT INTO _ProductBatch(_idbatch,_idproduct,_expirydate,_basecount,_realcount,_iddelivery,_price)
+			Values (10,10,'2022-12-04',150,80,NULL,15000);
+INSERT INTO _ProductBatch(_idbatch,_idproduct,_expirydate,_basecount,_realcount,_iddelivery,_price)
+			Values (11,11,'2022-12-08',240,72,NULL,880.23);
+INSERT INTO _ProductBatch(_idbatch,_idproduct,_expirydate,_basecount,_realcount,_iddelivery,_price)
+			Values (12,12,'2022-12-10',320,70,NULL,841.23);
+INSERT INTO _ProductBatch(_idbatch,_idproduct,_expirydate,_basecount,_realcount,_iddelivery,_price)
+			Values (13,13,'2022-07-12',40,20,NULL,261.99);
+INSERT INTO _ProductBatch(_idbatch,_idproduct,_expirydate,_basecount,_realcount,_iddelivery,_price)
+			Values (14,14,'2021-08-12',210,70,NULL,840.23);
+INSERT INTO _ProductBatch(_idbatch,_idproduct,_expirydate,_basecount,_realcount,_iddelivery,_price)
+			Values (15,15,'2020-12-12',350,70,NULL,991.23);
+INSERT INTO _ProductBatch(_idbatch,_idproduct,_expirydate,_basecount,_realcount,_iddelivery,_price)
+			Values (16,16,'2021-10-12',180,50,NULL,499);
+INSERT INTO _ProductBatch(_idbatch,_idproduct,_expirydate,_basecount,_realcount,_iddelivery,_price)
+			Values (17,17,'2020-12-12',500,10,NULL,200000);
+INSERT INTO _ProductBatch(_idbatch,_idproduct,_expirydate,_basecount,_realcount,_iddelivery,_price)
+			Values (18,18,'2020-12-12',300,70,NULL,700.22);
+INSERT INTO _ProductBatch(_idbatch,_idproduct,_expirydate,_basecount,_realcount,_iddelivery,_price)
+			Values (19,19,'2020-12-12',320,300,NULL,80.23);
+
 -- Produkty sklep 0 (o id 0)
 INSERT INTO _Product (_idproduct,_idproductstorage,_name,_description,_idcategory,_price,_discount,_iddeliverer,_picture)
 		   Values (20, 0,  'Danone Actimel', 'Napój mleczny malinowy wspierający układ odpornościowy całej rodziny!',  4,  6.99,   0,  3,  'actimel.jpg');
@@ -144,3 +166,24 @@ INSERT INTO _Product (_idproduct,_idproductstorage,_name,_description,_idcategor
 INSERT INTO _Product (_idproduct,_idproductstorage,_name,_description,_idcategory,_price,_discount,_iddeliverer,_picture)
 	   Values (29, 0,  'Musztarda miodowa', 'Musztarda miodowa Maille Dijon ma ciekawy, słodki smak. Oryginalny aromat wynika z połączenia tradycyjnej musztardy francuskiej Dijon i świetnego gatunkowo miodu. Ten słodki dodatek sprawia, że smak jest znacznie łagodniejszy.',  4,  6.99,   0,  3,  'musztardaMiodowa.jpg');
    
+
+INSERT INTO _ProductBatch(_idbatch,_idproduct,_expirydate,_basecount,_realcount,_iddelivery,_price)
+			Values (20,20,'2021-12-12',140,80,NULL,20000);
+INSERT INTO _ProductBatch(_idbatch,_idproduct,_expirydate,_basecount,_realcount,_iddelivery,_price)
+			Values (21,21,'2021-12-20',290,70,NULL,990.23);
+INSERT INTO _ProductBatch(_idbatch,_idproduct,_expirydate,_basecount,_realcount,_iddelivery,_price)
+			Values (22,22,'2021-12-12',340,70,NULL,791.23);
+INSERT INTO _ProductBatch(_idbatch,_idproduct,_expirydate,_basecount,_realcount,_iddelivery,_price)
+			Values (23,23,'2021-10-14',40,10,NULL,261.99);
+INSERT INTO _ProductBatch(_idbatch,_idproduct,_expirydate,_basecount,_realcount,_iddelivery,_price)
+			Values (24,24,'2021-10-14',260,40,NULL,410.23);
+INSERT INTO _ProductBatch(_idbatch,_idproduct,_expirydate,_basecount,_realcount,_iddelivery,_price)
+			Values (25,25,'2021-12-14',340,80,NULL,291.23);
+INSERT INTO _ProductBatch(_idbatch,_idproduct,_expirydate,_basecount,_realcount,_iddelivery,_price)
+			Values (26,26,'2020-12-14',190,92,NULL,999);
+INSERT INTO _ProductBatch(_idbatch,_idproduct,_expirydate,_basecount,_realcount,_iddelivery,_price)
+			Values (27,27,'2020-12-12',570,80,NULL,100000);
+INSERT INTO _ProductBatch(_idbatch,_idproduct,_expirydate,_basecount,_realcount,_iddelivery,_price)
+			Values (28,28,'2020-12-12',360,40,NULL,700.23);
+INSERT INTO _ProductBatch(_idbatch,_idproduct,_expirydate,_basecount,_realcount,_iddelivery,_price)
+			Values (29,29,'2020-12-12',370,200,NULL,70.23);
