@@ -24,12 +24,17 @@ class ShopModel extends Model
         
     }
 
-    public function get_idproductstorage(int $_idShop){
+    public function get_idproductstorage($_idShop){
         global $db;
-        $result = $db->querySelect("SELECT _idproductstorage FROM ".$this->tableName." WHERE _idshop=$_idShop LIMIT 1");
 
-        if(!empty($result)){
-            return $result[0]['_idproductstorage'];
+        if($_idShop){
+            $result = $db->querySelect("SELECT _idproductstorage FROM ".$this->tableName." WHERE _idshop=$_idShop LIMIT 1");
+
+            if(!empty($result)){
+                return $result[0]['_idproductstorage'];
+            }else{
+                return null;
+            }
         }else{
             return null;
         }

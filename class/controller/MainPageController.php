@@ -9,17 +9,20 @@ class MainPageController extends Controller
 {   
 
     protected $modelShop;
+    protected $modelProduct;
 
     protected $viewMainPage;
     protected $viewHeader;
 
     protected $_idShop = null;
+    protected $_idproductstorage= null;
     protected $isLogged = false;
 
     function __construct(){
 
         try{
             $this->modelShop = $this->loadModel("ShopModel");
+            $this->modelProduct = $this->loadModel("ProductModel");
             $this->viewHeader = $this->loadView("HeaderButtons");
             $this->viewMainPage = $this->loadView("MainPageView");
         }catch(\Exception $e){
@@ -46,13 +49,26 @@ class MainPageController extends Controller
             $this->_idShop = $_SESSION['_idShop'];
         }
 
+        $this->_idproductstorage = $this->modelShop->get_idproductstorage($this->_idShop);
+
         $this->viewMainPage->setIdShop($this->_idShop);
 
     }
 
     protected function setCategories(){
-        $this->viewMainPage->addCategory(["_idCategory" => 0, "_categoryName" => "Test"]);
-        $this->viewMainPage->addCategory(["_idCategory" => 1, "_categoryName" => "Test2"]); 
+
+        $categories = $this->modelProduct->getCategories($this->_idproductstorage);
+
+        if($categories){
+            foreach($categories as $category){
+                $category['_idCategory'] = $category['_idcategory'];
+                $category['_categoryName'] = $category['_categoryname'];
+                $this->viewMainPage->addCategory($category);
+            }
+        }else{
+            $this->viewMainPage->addCategory([]);
+        }
+
     }
 
     //pokazuje główną stronę
@@ -66,13 +82,11 @@ class MainPageController extends Controller
                 $shop['_idShop'] = $shop['_idshop'];
                 $this->viewMainPage->addShop($shop);
             }
-
             $this->viewMainPage->output();
 
         }else{  
             $this->changeController("SearchResultController", []);        
         }
-  
     }
 
     public function execute(){

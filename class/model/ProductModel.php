@@ -29,7 +29,7 @@ class ProductModel extends Model
             $where_idcategory .= " AND _idcategory=".$_idcategory;
         }
 
-        return $db->querySelect("SELECT _name, _price, _discount, _picture FROM _Product WHERE _name LIKE '%$filtr%' AND _idproductstorage = $_idproductstorage".$where_idcategory);
+        return $db->querySelect("SELECT _name, _price, _discount, _picture, _description, _picture FROM _Product WHERE _name LIKE '%$filtr%' AND _idproductstorage = $_idproductstorage".$where_idcategory);
 
     }
 
@@ -57,11 +57,16 @@ class ProductModel extends Model
 
     }
 
-    public function getCategories($idShop)
+    public function getCategories($_idproductstorage)
     {
         global $db;
-        return $db->querySelect("SELECT DISTINCT _ProductCategory._idCategory, _categoryName FROM _ProductCategory JOIN _Product ON _Product._idCategory = _ProductCategory._idCategory
-        JOIN _ProductStorage ON _ProductStorage._idProductStorage = _Product._idProductStorage WHERE _ProductStorage._idProductStorage = $idShop");
+
+        if($_idproductstorage){
+            return $db->querySelect("SELECT DISTINCT _ProductCategory._idCategory, _categoryName FROM _ProductCategory JOIN _Product ON _Product._idCategory = _ProductCategory._idCategory
+            JOIN _ProductStorage ON _ProductStorage._idProductStorage = _Product._idProductStorage WHERE _ProductStorage._idProductStorage = $_idproductstorage");
+        }else{
+            return null;
+        }
     }
 }
 
