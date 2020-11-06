@@ -107,6 +107,11 @@ button:hover, .button-like:hover{
     background-color: rgb(0, 100, 0);
 }
 
+button:disabled, .button-like:disabled{
+    background-color: rgb(100, 100, 100);
+    cursor:default;
+}
+
 .button-delete{
     color:inherit;
     background-color:transparent;
@@ -116,6 +121,8 @@ button:hover, .button-like:hover{
 .button-delete:hover{
     background-color:transparent;
 }
+
+
 
 .button-delete::before{
     font-size:40px;
