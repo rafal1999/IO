@@ -89,7 +89,7 @@ CREATE TABLE _Product (
 	_description		text,			/* opis produktu */
 	_idCategory          	integer,                /* numer odpowiadający za kategorię produktu 0 - jedzenie 1- agd rtv */
 	_price               	numeric(10,2),          /* cena produktu */
-	_discount            	numeric(10,2,                /* ile wynosi obniżka ceny produktu */
+	_discount            	numeric(10,2),                /* ile wynosi obniżka ceny produktu */
 	_idDeliverer         	integer,                /* numer dostawcy danego produktu */
 	_picture             	varchar(200)            /* ścieżka do pliku ze zdjęciem */
 );
