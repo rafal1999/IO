@@ -108,10 +108,24 @@ function addListenerToClass(className, eventType, eventListener){
     }
 }
 
+function disableButtonsForAddedProducts(){
+    let elements = document.getElementsByClassName("button-add-cart");
+    let cart = loadCartFromCookie();
+    let shopCart = cart[shopId];
+    for(let i = 0; i < elements.length; i++){
+        let productId = elements[i].dataset.productId;
+        if(findProduct(shopCart, productId) !== null){
+            elements[i].disabled = true;
+            elements[i].textContent = "W koszyku";
+        }
+    }
+}
+
 function setupCartButtons(){
     addListenerToClass("button-add-cart", "click", buttonAddClick);
     addListenerToClass("button-delete-cart", "click", buttonDeleteClick);
     addListenerToClass("input-number-in-cart", "change", cartNumberChange);
+    disableButtonsForAddedProducts();
 }
 
 document.addEventListener("DOMContentLoaded", setupCartButtons);
