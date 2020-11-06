@@ -1,4 +1,4 @@
-﻿
+﻿/*Fiszka*/
 CREATE TABLE _Session (					
 	_idSession 	  	integer PRIMARY KEY,
 	_idUser 	  	integer,                /* klucz obcy*/
