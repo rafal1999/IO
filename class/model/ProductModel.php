@@ -57,6 +57,18 @@ class ProductModel extends Model
 
     }
 
+    public function getDiscountedProducts($_idproductstorage){
+        global $db;
+
+       
+        if($_idproductstorage){
+        return $db->querySelect("SELECT _Product._idproduct, _Product._name, _Product._price, _Product._price - _Product._discount AS '_discountedPrice' FROM _Product
+        JOIN _ProductStorage ON _ProductStorage._idProductStorage = _Product._idProductStorage WHERE _ProductStorage._idProductStorage = $_idproductstorage AND _Product._discount <> 0");
+        }else{
+            return null;
+        }
+    }
+
     public function getCategories($_idproductstorage)
     {
         global $db;
