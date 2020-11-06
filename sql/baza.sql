@@ -98,8 +98,8 @@ CREATE TABLE _ProductBatch (
 	_idBatch             	integer PRIMARY KEY,
 	_idProduct           	integer,                /* klucz obcy? */
 	_expiryDate          	date,                   /* termin daty ważności produktu */
-	_baseCount           	integer,                /* zamówiona ilość produktów */
-	_realCount           	integer,                /* dostarczona ilość produktów */
+	_baseCount           	integer,                /* początkowa ilość produktów */
+	_realCount           	integer,                /* aktualna ilość produktów */
 	_idDelivery          	integer,                /* numer dostawy */
 	_price               	numeric(10,2)           /* cena całego zamówienia */
 );
