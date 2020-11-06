@@ -59,25 +59,25 @@ INSERT INTO _deliverer (_iddeliverer,_name,_address,_phone)
 
 
 INSERT INTO _Product (_idproduct,_idproductstorage,_name,_description,_idcategory,_price,_discount,_iddeliverer,_picture)
-		   Values (0,1,'Makaron','Makaron spaghetti Lubellato doskonały i klasyczny wybór na szybki i wartościowy obiad.',3,3.99,0,3,NULL);
+		   Values (0,1,'Makaron','Makaron spaghetti Lubellato doskonały i klasyczny wybór na szybki i wartościowy obiad.',3,3.99,0,3,makaron.jpg);
 INSERT INTO _Product (_idproduct,_idproductstorage,_name,_description,_idcategory,_price,_discount,_iddeliverer,_picture)
-		   Values (1,1,'Mąka','pszenna Szymanowska typ 480',3,3.99,0,3,NULL);
+		   Values (1,1,'Mąka','pszenna Szymanowska typ 480',3,3.99,0,3,makaSzymanowska.jpg);
 INSERT INTO _Product (_idproduct,_idproductstorage,_name,_description,_idcategory,_price,_discount,_iddeliverer,_picture)
-		   Values (2,1,'Ketchup łagodny','Ketchup łagodny marki Pudliszki to łagodny w smaku sos',3,2.99,0,3,NULL);
+		   Values (2,1,'Ketchup łagodny','Ketchup łagodny marki Pudliszki to łagodny w smaku sos',3,2.99,0,3,ketchup.jpg);
 INSERT INTO _Product (_idproduct,_idproductstorage,_name,_description,_idcategory,_price,_discount,_iddeliverer,_picture)
-		   Values (3,1,'Cukier biały','Ketchup łagodny marki Pudliszki to łagodny w smaku sos',3,1.99,0,3,NULL);
+		   Values (3,1,'Cukier biały','Ketchup łagodny marki Pudliszki to łagodny w smaku sos',3,1.99,0,3,cukier.jpg);
 INSERT INTO _Product (_idproduct,_idproductstorage,_name,_description,_idcategory,_price,_discount,_iddeliverer,_picture)
-		   Values (4,1,'Cytryny','Świeże cytryny, oferowane przez nasz sklep internetowy',0,0.99,0,3,NULL);
+		   Values (4,1,'Cytryny','Świeże cytryny, oferowane przez nasz sklep internetowy',0,0.99,0,3,cytryny.jpg);
 INSERT INTO _Product (_idproduct,_idproductstorage,_name,_description,_idcategory,_price,_discount,_iddeliverer,_picture)
-		   Values (5,1,'PEPSI Napój gazowany','Od ponad 100 lat Pepsi niesie radość i orzeźwienie na całym świecie.',4,4.99,0,3,NULL);
+		   Values (5,1,'PEPSI Napój gazowany','Od ponad 100 lat Pepsi niesie radość i orzeźwienie na całym świecie.',4,4.99,0,3,pepsi.jpg);
 INSERT INTO _Product (_idproduct,_idproductstorage,_name,_description,_idcategory,_price,_discount,_iddeliverer,_picture)
-		   Values (6,1,'Kawa mielona','STARBUCKS ESPRESSO Dark Roast Kawa mielona Dark roast Bogaty smak z nutami karmelu.',4,159.99,0,3,NULL);
+		   Values (6,1,'Kawa mielona','STARBUCKS ESPRESSO Dark Roast Kawa mielona Dark roast Bogaty smak z nutami karmelu.',4,159.99,0,3,kawa.jpg);
 INSERT INTO _Product (_idproduct,_idproductstorage,_name,_description,_idcategory,_price,_discount,_iddeliverer,_picture)
-		   Values (7,1,'Ogórki','Ogórki krótkie spod upraw szklarniowych z nowych zbiorów, świeże i pachnące wiosną.',1,2.99,0,3,NULL);
+		   Values (7,1,'Ogórki','Ogórki krótkie spod upraw szklarniowych z nowych zbiorów, świeże i pachnące wiosną.',1,2.99,0,3,ogorki.jpg);
 INSERT INTO _Product (_idproduct,_idproductstorage,_name,_description,_idcategory,_price,_discount,_iddeliverer,_picture)
-	   Values (8,1,'Wafelek orzechowy','Wafelek z nadzieniem mleczno-nugatowym.',2,1.59,0,3,NULL);
+	   Values (8,1,'Wafelek orzechowy','Wafelek z nadzieniem mleczno-nugatowym.',2,1.59,1,3,wafelek.jpg);
 INSERT INTO _Product (_idproduct,_idproductstorage,_name,_description,_idcategory,_price,_discount,_iddeliverer,_picture)
-	   Values (9,1,'Czekolada Biała','Czekolada Biała  Czy wiesz jak powstaje wedlowska biała czekolada?',2,1.59,0,3,NULL);
+	   Values (9,1,'Czekolada Biała','Czekolada Biała  Czy wiesz jak powstaje wedlowska biała czekolada?',2,1.59,0,3,czekolada.jpg);
 
 
 INSERT INTO _ProductBatch(_idbatch,_idproduct,_expirydate,_basecount,_realcount,_iddelivery,_price)
