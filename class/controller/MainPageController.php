@@ -44,13 +44,16 @@ class MainPageController extends Controller
                 $_SESSION['_idShop'] = null;
             }else{
                 $this->_idShop = $_SESSION['_idShop'] = intval($_REQUEST['_idShop']);
+                $this->_idproductstorage = $this->modelShop->get_idproductstorage($this->_idShop);
+
             }
         }else if(isset($_SESSION['_idShop']) && intval($_SESSION['_idShop']) >= 0){
             $this->_idShop = $_SESSION['_idShop'];
+            $this->_idproductstorage = $this->modelShop->get_idproductstorage($this->_idShop);
+
         }
 
-        $this->_idproductstorage = $this->modelShop->get_idproductstorage($this->_idShop);
-
+        
         $this->viewMainPage->setIdShop($this->_idShop);
 
     }
@@ -94,6 +97,21 @@ class MainPageController extends Controller
         $this->showMenu();
         $this->showPage();
     } 
+
+    protected function getProductsFromCookies(){
+
+        if(isset($_COOKIE['cart'])) {
+            $ecoded = urldecode($_COOKIE['cart']);
+            $json = json_decode($ecoded, true);
+            if(isset($json[$this->_idShop])){
+                return $json[$this->_idShop];
+            }else{
+                return [];
+            }
+        }else{
+            return [];
+        }
+    }
 
 }
 

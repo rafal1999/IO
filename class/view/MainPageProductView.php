@@ -24,6 +24,7 @@ class MainPageProductView extends View
     public function setProduct(array $product){
         $this->setProperty('product', $product);
     }
+    
 
     
 }

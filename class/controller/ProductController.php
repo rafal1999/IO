@@ -19,10 +19,12 @@ class ProductController extends MainPageController
 
 
     protected function showPage(){            
-        //$this->viewMainPage->addProduct([]);
+
         $this->setCategories();
 
         $row = $this->modelProduct->getOneRow("_idproduct", $_REQUEST['idProduct']);
+
+        $row['_idProduct'] = $row['_idproduct'];
 
         $this->viewMainPage->setProduct($row);
         $this->viewMainPage->output();
