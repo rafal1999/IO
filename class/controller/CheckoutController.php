@@ -15,7 +15,7 @@ class CheckoutController extends MainPageController
         ,'_houseNumber' => ""
         ,'_flatNumber' => ""
         ,'_postalCode' => ""
-        ,'_town' => ""
+        ,'_city' => ""
         ,'_email' => ""
         ,'_phoneNumber' => ""
     ];

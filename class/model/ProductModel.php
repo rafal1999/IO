@@ -8,49 +8,52 @@ require_once(MODEL_CLASS_PATH);
 
 class ProductModel extends Model
 {
-    public function addNewProduct()
-    {
+
+    function __construct(){
+        $this->tableName = "_product";
+    }
+
+    public function addNewProduct(){
         
     }
 
-    public function getByShopId($idShop)
-    {
+    public function getByShopId($idShop){
         
     }
 
-    public function searchProducts($filtr)
-    {
-       global $db;
-       return $db->querySelect("SELECT _name, _price, _discount, _picture FROM _Product WHERE _name LIKE '%$filtr'%");
+    public function searchProducts($filtr, $_idproductstorage , $_idcategory = null){
+        global $db;
+        
+        $where_idcategory = "";
+        if($_idcategory !== null){
+            $where_idcategory .= " AND _idcategory=".$_idcategory;
+        }
+
+        return $db->querySelect("SELECT _name, _price, _discount, _picture FROM _Product WHERE _name LIKE '%$filtr%' AND _idproductstorage = $_idproductstorage".$where_idcategory);
+
     }
 
-    public function deleteProduct($id)
-    {
+    public function deleteProduct($id){
 
     }
 
-    public function changeDefaultPrice($newValue)
-    {
+    public function changeDefaultPrice($newValue){
         
     }
 
-    public function changeDiscount($newValue)
-    {
+    public function changeDiscount($newValue){
 
     }
 
-    public function getFullPrice()
-    {
+    public function getFullPrice(){
 
     }
 
-    public function changeAmount($newValue)
-    {
+    public function changeAmount($newValue){
         
     }
 
-    public function updateProduct($data, $id)
-    {
+    public function updateProduct($data, $id){
 
     }
 
