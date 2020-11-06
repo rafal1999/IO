@@ -29,7 +29,7 @@ class ProductModel extends Model
             $where_idcategory .= " AND _idcategory=".$_idcategory;
         }
 
-        return $db->querySelect("SELECT _name, _price, _discount, _picture, _description, _picture, _idProduct  FROM _Product WHERE _name LIKE '%$filtr%' AND _idproductstorage = $_idproductstorage".$where_idcategory);
+        return $db->querySelect("SELECT _name, _price, _discount, _picture, _description, _picture, _idProduct  FROM _Product WHERE upper(_name) LIKE upper('%$filtr%') AND _idproductstorage = $_idproductstorage".$where_idcategory);
 
     }
 

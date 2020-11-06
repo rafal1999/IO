@@ -111,6 +111,8 @@ function addListenerToClass(className, eventType, eventListener){
 function disableButtonsForAddedProducts(){
     let elements = document.getElementsByClassName("button-add-cart");
     let cart = loadCartFromCookie();
+    if(!cart.hasOwnProperty(shopId))
+        return;
     let shopCart = cart[shopId];
     for(let i = 0; i < elements.length; i++){
         let productId = elements[i].dataset.productId;
