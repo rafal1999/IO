@@ -52,7 +52,6 @@ class MainPageController extends Controller
             $this->_idproductstorage = $this->modelShop->get_idproductstorage($this->_idShop);
 
         }
-
         
         $this->viewMainPage->setIdShop($this->_idShop);
 

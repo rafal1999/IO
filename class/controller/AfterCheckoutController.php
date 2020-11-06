@@ -19,6 +19,12 @@ class AfterCheckoutController extends MainPageController
 
 
     protected function showPage(){  
+
+        $products = $this->getProductsFromCookies();
+
+        if(count($products) == 0 || !is_array($products)){
+            $this->changeController("CartController",[]);
+        }
         
         $inData = [];
         
@@ -33,13 +39,14 @@ class AfterCheckoutController extends MainPageController
         $inData['_phoneNumber'] = $_POST['phone-number'];
         $inData['_paymentMethod'] = isset($_POST['payment-method']) ? $_POST['payment-method'] : 0;
         $inData['_acceptConditions'] = isset($_POST['accept-conditions']) ? $_POST['accept-conditions'] : 0;
-        $inData['_delivered'] = false;
-
-       /* foreach($inData as $key => $value){
-            if(empty($value) && $key != "flat-number"){
+        
+        foreach($inData as $key => $value){
+            if(empty($value) && $key != "_flatNumber"){
                 $this->changeController('CheckoutController', []);
             }
-        }*/
+        }
+
+        $inData['_delivered'] = false;
 
         $products = $this->getProductsFromCookies();
 
@@ -61,12 +68,8 @@ class AfterCheckoutController extends MainPageController
         $this->viewMainPage->setOrder($inData);
 
         $this->viewMainPage->setTotalPrice($totalPrice);
-        $this->viewMainPage->output();
 
-        if (isset($_COOKIE['cart'])) {
-            unset($_COOKIE['cart']); 
-            setcookie('cart', null, -1, '/'); 
-        }
+        $this->viewMainPage->output();
     }
 
 }

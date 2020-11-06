@@ -32,6 +32,12 @@ class CheckoutController extends MainPageController
 
     protected function showPage(){            
         //$this->viewMainPage->addProduct([]);
+        $products = $this->getProductsFromCookies();
+
+        if(count($products) == 0 || !is_array($products)){
+            $this->changeController("CartController",[]);
+        }
+
         $this->viewMainPage->setUser($this->defaultUser);
         $this->viewMainPage->output();
     }
