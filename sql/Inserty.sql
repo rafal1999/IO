@@ -142,4 +142,25 @@ INSERT INTO _Product (_idproduct,_idproductstorage,_name,_description,_idcategor
 INSERT INTO _Product (_idproduct,_idproductstorage,_name,_description,_idcategory,_price,_discount,_iddeliverer,_picture)
 	   Values (19,2,'Banany','Banany bardzo dobrze wpływają na układ krążenia, wzmacniając serce oraz regulując ciśnienie tętnicze krwi.Pozwalają spokojnie zasypiać i wzmacniają pamięć.',0,4.49,0,3,'bananyFresh.jpg');
 
-		   
+-- Produkty sklep 0 (o id 0)
+INSERT INTO _Product (_idproduct,_idproductstorage,_name,_description,_idcategory,_price,_discount,_iddeliverer,_picture)
+		   Values (20, 0,  'Danone Actimel', 'Napój mleczny malinowy wspierający układ odpornościowy całej rodziny!',  4,  6.99,   0,  3,  'actimel.jpg');
+INSERT INTO _Product (_idproduct,_idproductstorage,_name,_description,_idcategory,_price,_discount,_iddeliverer,_picture)
+		   Values (21, 0,  'Doritos Hot Corn', 'Chipsy kukurydziane o smaku ostrej papryki.',  2,  4.99,   0,  3,  'doritos.jpg');
+INSERT INTO _Product (_idproduct,_idproductstorage,_name,_description,_idcategory,_price,_discount,_iddeliverer,_picture)
+		   Values (22, 0,  'Delicje Szampańskie', 'Biszkopty z galaretką pomarańczową',  2,  4.55,   0,  3,  'delicje.jpg');
+INSERT INTO _Product (_idproduct,_idproductstorage,_name,_description,_idcategory,_price,_discount,_iddeliverer,_picture)
+		   Values (23, 0,  'Dżem truskawkowy', 'Dżem truskawkowy Łowicz to dżem wykonany z naturalnych i świeżych kawałków truskawek.',  3,  4.29,  0,  3,  'lowiczDzem.jpg');
+INSERT INTO _Product (_idproduct,_idproductstorage,_name,_description,_idcategory,_price,_discount,_iddeliverer,_picture)
+		   Values (24, 0,  'Nestle Płatki kukurydziane', 'NESTLÉ Corn Flakes chrupiące, bezglutenowe płatki kukurydziane!',  3,  9.99,   2.00,  3,  'nestleCornFlakes.jpg');
+INSERT INTO _Product (_idproduct,_idproductstorage,_name,_description,_idcategory,_price,_discount,_iddeliverer,_picture)
+		   Values (25, 0,  'Woda lecznicza', 'Kryniczanka to naturalna woda lecznicza Słotwinka.', 4,  20.99,   0,  3,  'kryniczanka.jpg');
+INSERT INTO _Product (_idproduct,_idproductstorage,_name,_description,_idcategory,_price,_discount,_iddeliverer,_picture)
+		   Values (26, 0,  'Szampon', 'Szampon wzamcniający Garnier Fructis',  3,  11.69,   1.69,  3,  'szampon.jpg');
+INSERT INTO _Product (_idproduct,_idproductstorage,_name,_description,_idcategory,_price,_discount,_iddeliverer,_picture)
+		   Values (27, 0,  'Pistacje', 'Pistacje Kresto, prażone, solone',  3,  10.99,   0,  3,  'pistacje.jpg');
+INSERT INTO _Product (_idproduct,_idproductstorage,_name,_description,_idcategory,_price,_discount,_iddeliverer,_picture)
+	   Values (28, 0,  'Filety z makreli', 'King Oscar - Filety z makreli w sosie pomidorowym z papryką. Produkt rybny sterylizowany',  3,  6.49,   0,  3,  'filetyMakrela.jpg');
+INSERT INTO _Product (_idproduct,_idproductstorage,_name,_description,_idcategory,_price,_discount,_iddeliverer,_picture)
+	   Values (29, 0,  'Musztarda miodowa', 'Musztarda miodowa Maille Dijon ma ciekawy, słodki smak. Oryginalny aromat wynika z połączenia tradycyjnej musztardy francuskiej Dijon i świetnego gatunkowo miodu. Ten słodki dodatek sprawia, że smak jest znacznie łagodniejszy.',  4,  6.99,   0,  3,  'musztardaMiodowa.jpg');
+   
