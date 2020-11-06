@@ -7,7 +7,15 @@
 <section>
     <h3>Adres dostawy</h3>
     <p>
-        {{{ $order['_address'] }}}
+        {{{ $order['_firstName'] . ' ' . $order['_lastName'] }}}
+        <br>
+        ul. {{{ $order['_street'] }}} {{{ $order['_houseNumber'] }}}
+        {% if(isset($order['_flatNumber'] )): %}
+        {{{ $order['_flatNumber'] }}}
+        {% endif; %}
+        <br>
+        {{{ $order['_postalCode'] . ' ' . $order['_city'] }}}
+
     </p>
 </section>
 <section>
