@@ -29,7 +29,7 @@ class ProductModel extends Model
             $where_idcategory .= " AND _idcategory=".$_idcategory;
         }
 
-        return $db->querySelect("SELECT _name, _price, _discount, _picture, _description, _picture FROM _Product WHERE _name LIKE '%$filtr%' AND _idproductstorage = $_idproductstorage".$where_idcategory);
+        return $db->querySelect("SELECT _name, _price, _discount, _picture, _description, _picture, _idProduct  FROM _Product WHERE _name LIKE '%$filtr%' AND _idproductstorage = $_idproductstorage".$where_idcategory);
 
     }
 
@@ -59,11 +59,10 @@ class ProductModel extends Model
 
     public function getDiscountedProducts($_idproductstorage){
         global $db;
-
        
         if($_idproductstorage){
-        return $db->querySelect("SELECT _Product._idproduct, _Product._name, _Product._price, _Product._price - _Product._discount AS '_discountedPrice' FROM _Product
-        JOIN _ProductStorage ON _ProductStorage._idProductStorage = _Product._idProductStorage WHERE _ProductStorage._idProductStorage = $_idproductstorage AND _Product._discount <> 0");
+            return $db->querySelect("SELECT _Product._idProduct, _Product._name, _Product._price, _Product._price - _Product._discount AS \"_discountedPrice\", _description  FROM _Product
+            JOIN _ProductStorage ON _ProductStorage._idProductStorage = _Product._idProductStorage WHERE _ProductStorage._idProductStorage = $_idproductstorage AND _Product._discount <> 0");
         }else{
             return null;
         }

@@ -31,6 +31,7 @@ class SearchResultController extends MainPageController
             if(!isset($_REQUEST['category'])){
                 //default page
                 $this->viewMainPage->specialOffersMode();
+                $products = $this->modelProduct->getDiscountedProducts($this->_idproductstorage);
             }else{
                 $products = $this->modelProduct->searchProducts("", $this->_idproductstorage, $_REQUEST['category']);   
             }
@@ -38,6 +39,8 @@ class SearchResultController extends MainPageController
 
         if($products != null){
             foreach($products as $product){
+                $product['_idProduct'] = $product['_idproduct']; 
+                $product['_discount'] = $product['_discountedPrice']; 
                 $this->viewMainPage->addProduct($product);
             }
         }else{
