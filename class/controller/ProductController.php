@@ -21,14 +21,10 @@ class ProductController extends MainPageController
     protected function showPage(){            
         //$this->viewMainPage->addProduct([]);
         $this->setCategories();
-        $this->viewMainPage->setProduct([
-            '_picture' => 'cukier.jpg'
-            ,'_description' => 'Opis'
-            ,'_discount' => 15
-            ,'_price' => 50
-            ,'_idProduct' => 0
-            ,'_name' => "Swoiski cukier"
-        ]);
+
+        $row = $this->modelProduct->getOneRow("_idproduct", $_REQUEST['idProduct']);
+
+        $this->viewMainPage->setProduct($row);
         $this->viewMainPage->output();
     }
 

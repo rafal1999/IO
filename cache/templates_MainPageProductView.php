@@ -6,6 +6,12 @@
     <title><?php echo $title ?></title>
     <link href="<?php echo CSS_PATH ?>normalize.css" rel="stylesheet">
     <link href="<?php echo CSS_PATH ?>main.css" rel="stylesheet">
+    <script>
+    <?php if(isset($idShop)): ?>
+        let shopId = <?php echo $idShop ?>;
+    <?php endif; ?>
+    </script>
+    <script type="text/javascript" src="<?php echo JS_PATH ?>main.js"></script>
 </head>
 <body>
     <header class="top-header">
@@ -25,7 +31,7 @@
 <ul class="category-list">
 <?php foreach($categories as $category): ?>
     <li>
-        <a href="kontroler-sklepu?category=<?php echo htmlentities(urlencode($category['_idCategory']), ENT_QUOTES, 'UTF-8') ?>"><?php echo htmlentities($category['_categoryName'], ENT_QUOTES, 'UTF-8') ?></a>
+        <a href="?controller=SearchResultController&amp;category=<?php echo htmlentities(urlencode($category['_idCategory']), ENT_QUOTES, 'UTF-8') ?>"><?php echo htmlentities($category['_categoryName'], ENT_QUOTES, 'UTF-8') ?></a>
     </li>
 <?php endforeach; ?>
 </ul>
@@ -34,7 +40,8 @@
     <div class="main-column">
         
 <section>
-    <form action="kontroler-sklepu" method="get">
+    <form method="get">
+        <input type="hidden" name="controller" value="SearchResultController">
         <div class="text-input-group">
             <label for="search">Znajdź produkt</label>
             <input name="search" id="search" type="text">
@@ -61,7 +68,7 @@
             <div class="product-price"><?php echo htmlentities($product['_price'], ENT_QUOTES, 'UTF-8') ?> zł</div>
         <?php endif; ?>
         <div class="submit-group">
-            <button type="button" value="<?php echo htmlentities($product['_idProduct'], ENT_QUOTES, 'UTF-8') ?>" class="add-to-cart">Do koszyka</button>
+            <button type="button" value="<?php echo htmlentities($product['_idProduct'], ENT_QUOTES, 'UTF-8') ?>" class="button-add-cart" data-product-id="<?php echo htmlentities($product['_idProduct'], ENT_QUOTES, 'UTF-8') ?>">Do koszyka</button>
         </div>
     </div>
 </article>
