@@ -75,7 +75,7 @@ INSERT INTO _Product (_idproduct,_idproductstorage,_name,_description,_idcategor
 INSERT INTO _Product (_idproduct,_idproductstorage,_name,_description,_idcategory,_price,_discount,_iddeliverer,_picture)
 		   Values (7,1,'Ogórki','Ogórki krótkie spod upraw szklarniowych z nowych zbiorów, świeże i pachnące wiosną.',1,2.99,0,3,'ogorki.jpg');
 INSERT INTO _Product (_idproduct,_idproductstorage,_name,_description,_idcategory,_price,_discount,_iddeliverer,_picture)
-	   Values (8,1,'Wafelek orzechowy','Wafelek z nadzieniem mleczno-nugatowym.',2,1.59,1,3,wafelek.jpg);
+	   Values (8,1,'Wafelek orzechowy','Wafelek z nadzieniem mleczno-nugatowym.',2,1.59,1,3,'wafelek.jpg');
 INSERT INTO _Product (_idproduct,_idproductstorage,_name,_description,_idcategory,_price,_discount,_iddeliverer,_picture)
 	   Values (9,1,'Czekolada Biała','Czekolada Biała  Czy wiesz jak powstaje wedlowska biała czekolada?',2,1.59,0,3,'czekolada.jpg');
 
