@@ -6,11 +6,11 @@
     <div class="columns-inside">
         <div class="text-input-group column-first-name">
             <label for="first-name">Imię*</label>
-            <input type="text" id="first-name" name="first-name" value="{{{ $user['_firstName'] }}}">
+            <input type="text" id="first-name" name="first-name" value="{{{ $user['_firstName'] }}}" required>
         </div>
         <div class="text-input-group column-last-name">
             <label for="last-name">Nazwisko*</label>
-            <input type="text" id="last-name" name="last-name" value="{{{ $user['_lastName'] }}}">
+            <input type="text" id="last-name" name="last-name" value="{{{ $user['_lastName'] }}}" required>
         </div>
     </div>
     <div class="columns-inside">
@@ -20,7 +20,7 @@
         </div>
         <div class="text-input-group column-house-number">
             <label for="house-number">Numer domu*</label>
-            <input type="text" id="house-number" name="house-number"  value="{{{ $user['_houseNumber'] }}}">
+            <input type="text" id="house-number" name="house-number"  value="{{{ $user['_houseNumber'] }}}" required>
         </div>
         <div class="text-input-group column-flat-number">
             <label for="flat-number">Numer lokalu</label>
@@ -30,16 +30,16 @@
     <div class="columns-inside">
         <div class="text-input-group column-postal-code">
             <label for="postal-code">Kod pocztowy*</label>
-            <input type="text" id="postal-code" name="postal-code" value="{{{ $user['_postalCode'] }}}">
+            <input type="text" id="postal-code" name="postal-code" value="{{{ $user['_postalCode'] }}}" required pattern="[0-9]{2}-[0-9]{3}" title="Kod pocztowy w formacie XX-XXX">
         </div>
         <div class="text-input-group column-town">
             <label for="city">Miejscowość*</label>
-            <input type="text" id="city" name="city" value="{{{ $user['_city'] }}}">
+            <input type="text" id="city" name="city" value="{{{ $user['_city'] }}}" required>
         </div>
     </div>
     <div class="text-input-group">
         <label for="email">E-mail*</label>
-        <input type="text" id="email" name="email" value="{{{ $user['_email'] }}}">
+        <input type="email" id="email" name="email" value="{{{ $user['_email'] }}}" required>
     </div>
     <div class="text-input-group column-phone-number">
         <label for="phone-number">Telefon</label>
@@ -49,12 +49,12 @@
     
     <h2>Forma płatności</h2>
     <div class="radio-group">
-        <label><input type="radio" name="payment-method"> Karta płatnicza</label>
+        <label><input type="radio" name="payment-method" required> Karta płatnicza</label>
         <label><input type="radio" name="payment-method"> Przelew internetowy</label>
         <label><input type="radio" name="payment-method"> Płatność przy odbiorze</label>
     </div>
     <div class="checkbox-group">
-        <label><input type="checkbox" name="accept-conditions" id="accept-conditions"> Akceptuję regulamin sklepu</label>
+        <label><input type="checkbox" name="accept-conditions" id="accept-conditions" required> Akceptuję regulamin sklepu</label>
     </div>
     <div class="submit-group">
         <a class="button-like" href="?controller=CartController">Wróć do koszyka</a>
