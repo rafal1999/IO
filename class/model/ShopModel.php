@@ -8,6 +8,11 @@ require_once(MODEL_CLASS_PATH);
 
 class ShopModel extends Model
 {
+
+    function __construct(){
+        $this->tableName = "_shop";
+    }
+
     public function addNewShow($data)
     {
         global $db;
@@ -23,6 +28,7 @@ class ShopModel extends Model
     {
 
     }
+
 }
 
 ?>

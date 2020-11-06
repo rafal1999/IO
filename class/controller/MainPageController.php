@@ -8,7 +8,7 @@ require_once(CONTROLLER_CLASS_PATH);
 class MainPageController extends Controller
 {   
 
-    protected $modelProducts;
+    protected $modelShop;
 
     protected $viewMainPage;
     protected $viewHeader;
@@ -19,6 +19,7 @@ class MainPageController extends Controller
     function __construct(){
 
         try{
+            $this->modelShop = $this->loadModel("ShopModel");
             $this->viewHeader = $this->loadView("HeaderButtons");
             $this->viewMainPage = $this->loadView("MainPageView");
         }catch(\Exception $e){
@@ -58,8 +59,16 @@ class MainPageController extends Controller
     protected function showPage(){
         
         if($this->_idShop === null){
-            $this->viewMainPage->addShop(['_name'=>'Sklep1', '_idShop'=>'0']);
+
+            $shops = $this->modelShop->get();
+       
+            foreach($shops as $shop){
+                $shop['_idShop'] = $shop['_idshop'];
+                $this->viewMainPage->addShop($shop);
+            }
+
             $this->viewMainPage->output();
+
         }else{  
             $this->changeController("SearchResultController", []);        
         }

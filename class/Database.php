@@ -47,7 +47,7 @@ class Database
         $result = $this->query($query);
 
         if($result != null){
-            return pg_fetch_array($result, NULL, PGSQL_ASSOC);
+            return pg_fetch_all($result);
         }else{
             return null;
         }
